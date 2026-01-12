@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>I003 — Fort Carson Fire and EMS – Prehospital Practice Guidelines</title>
+<style>
+:root{--bg:#0b1220;--panel:#111a2e;--text:#e8eefc;--muted:#9fb0d0;--accent:#4ea1ff;}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.layout{display:grid;grid-template-columns:320px 1fr;min-height:100vh}
+.sidebar{background:var(--panel);padding:16px;overflow:auto;border-right:1px solid rgba(255,255,255,.08)}
+.main{padding:20px;max-width:1100px}
+h1,h2,h3{margin:0.6em 0}
+.small{color:var(--muted);font-size:0.9rem}
+.searchbox{display:flex;gap:8px;margin:12px 0}
+input[type="search"]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.25);color:var(--text)}
+button{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(78,161,255,.15);color:var(--text);cursor:pointer}
+button:hover{background:rgba(78,161,255,.22)}
+.nav-section{margin-top:14px}
+.nav-section-title{font-weight:700;margin:8px 0 6px}
+.nav-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.nav-list a{display:block;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.04)}
+.nav-list a:hover{background:rgba(255,255,255,.08)}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;margin:12px 0}
+pre{white-space:pre-wrap;word-wrap:break-word;background:rgba(0,0,0,.25);padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.08);overflow:auto}
+details{margin-top:10px}
+img.page-scan{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0a0f1b}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(78,161,255,.15);border:1px solid rgba(78,161,255,.35);font-size:.85rem;color:var(--text)}
+.results{display:flex;flex-direction:column;gap:10px}
+.result{padding:12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.result-title{font-weight:700}
+.result-meta{color:var(--muted);font-size:.9rem;margin-top:4px}
+</style>
+
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="topbar"><div><div style="font-weight:800;line-height:1.1">Fort Carson Fire and EMS – Prehospital Practice Guidelines</div><div class="small">GitHub Pages site</div></div></div>
+<div class="searchbox"><input id="q" type="search" placeholder="Search guidelines… (e.g., A007, trauma, ketamine)" aria-label="Search"><button id="go">Search</button></div>
+<div class="small">Tip: click a guideline on the left, or use search.</div>
+<div class="nav-section"><div class="nav-section-title">General Guidelines</div><ul class="nav-list">
+<li><a href="A001.html">A001 — Guideline Key</a></li>
+<li><a href="A002.html">A002 — well as documentation.</a></li>
+<li><a href="A003.html">A003 — Decision Making Capacity</a></li>
+<li><a href="A004.html">A004 — completed.</a></li>
+<li><a href="A005.html">A005 — care with some situational specifics.</a></li>
+<li><a href="A006.html">A006 — Benzodiazapines are an exception to the above statement</a></li>
+<li><a href="A007.html">A007 — Trauma Criteria</a></li>
+<li><a href="A008.html">A008 — the provider should, when in doubt, attempt resuscitation.</a></li>
+<li><a href="A009.html">A009 — Definition of Abuse</a></li>
+<li><a href="A011.html">A011 — OVERSIGHT</a></li>
+<li><a href="A012.html">A012 — “CHAPTER TWO ‐ RULES PERTAINING TO EMS PRACTICE AND MEDICAL DIRECTOR OVERSIGHT”</a></li>
+<li><a href="A015.html">A015 — Military Police (MP’s)</a></li>
+<li><a href="A014.html">A014 — illness.</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Procedures</div><ul class="nav-list">
+<li><a href="B001.html">B001 — Provider</a></li>
+<li><a href="B002.html">B002 — Definition:</a></li>
+<li><a href="B003.html">B003 — All medications in this guideline will be given by standing order</a></li>
+<li><a href="B004.html">B004 — Descriptions</a></li>
+<li><a href="B005.html">B005 — during transport.</a></li>
+<li><a href="B006.html">B006 — with a suspected cervical spine injury.</a></li>
+<li><a href="B007.html">B007 — Provider Level</a></li>
+<li><a href="B008.html">B008 — Provider Level</a></li>
+<li><a href="B009.html">B009 — Provider Level</a></li>
+<li><a href="B010.html">B010 — Extremity Splinting</a></li>
+<li><a href="B011.html">B011 — Orogastric Tube Insertion</a></li>
+<li><a href="B012.html">B012 — Special Considerations</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Respiratory Emergencies</div><ul class="nav-list">
+<li><a href="C001.html">C001 — designed to create a simplified and standard treatment algorithm.</a></li>
+<li><a href="C002.html">C002 — ALBUTEROL NEB; PRN every 10 minutes</a></li>
+<li><a href="C003.html">C003 — YES</a></li>
+<li><a href="C004.html">C004 — Suspected Cause</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Cardiac Emergencies</div><ul class="nav-list">
+<li><a href="D001.html">D001 — STEMI</a></li>
+<li><a href="D002.html">D002 — TRANSCUTANEOUS</a></li>
+<li><a href="D003.html">D003 — Initial assessment</a></li>
+<li><a href="D004.html">D004 — General Electrotherapy</a></li>
+<li><a href="D005.html">D005 — History and Presentation</a></li>
+<li><a href="D006.html">D006 — Special Considerations</a></li>
+<li><a href="D007.html">D007 — ventricular dysfunction.</a></li>
+<li><a href="D004.html">D004 — goal is 35 to 45 mmHg avoid hyperventilation to achieve.</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Medical Emergencies</div><ul class="nav-list">
+<li><a href="E001.html">E001 — Suicidal Ideation Assessment Tool</a></li>
+<li><a href="E002.html">E002 — Stroke Screening</a></li>
+<li><a href="E003.html">E003 — Establish vascular access, if possible</a></li>
+<li><a href="E004.html">E004 — guidelines”.</a></li>
+<li><a href="E005.html">E005 — Special Considerations</a></li>
+<li><a href="E006.html">E006 — YES</a></li>
+<li><a href="E007.html">E007 — General supportive care</a></li>
+<li><a href="E008.html">E008 — Special Considerations</a></li>
+<li><a href="E009.html">E009 — thighs upward and apply gentle open hand pressure above the pubic bone.</a></li>
+<li><a href="E010.html">E010 — a. If suspected trauma evaluate for septal hematoma</a></li>
+<li><a href="E003.html">E003 — Special Considerations</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Traumatic Emergencies</div><ul class="nav-list">
+<li><a href="F001.html">F001 — Traumatic injuries require prompt care and transportation.</a></li>
+<li><a href="F002.html">F002 — Special Considerations</a></li>
+<li><a href="F003.html">F003 — b. If stable consider pain management, see PAIN MANAGEMENT GUIDELINE</a></li>
+<li><a href="F004.html">F004 — splinting to avoid impeding vascular drainage</a></li>
+<li><a href="F005.html">F005 — b. If stable consider pain management, see PAIN MANAGEMENT GUIDELINE</a></li>
+<li><a href="F006.html">F006 — If stable, consider pain management, see PAIN MANAGEMENT GUIDELINE</a></li>
+<li><a href="F007.html">F007 — GUIDELINE</a></li>
+<li><a href="F008.html">F008 — a. Drowning and near drowning refer to submersion injuries.</a></li>
+<li><a href="F009.html">F009 — If ROSC is NOT achieved consider Termination of Resuscitation</a></li>
+<li><a href="F010.html">F010 — renal failure, cardiac dysrhythmias, and death.</a></li>
+<li><a href="F011.html">F011 — necrosis and thus the extra‐ esophageal structures at highest risk of injury.</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Environmental Emergencies</div><ul class="nav-list">
+<li><a href="G001.html">G001 — Initial assessment</a></li>
+<li><a href="G002.html">G002 — appropriate facility</a></li>
+<li><a href="G003.html">G003 — Initial assessment</a></li>
+<li><a href="G004.html">G004 — Rewarm extremity</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Medications</div><ul class="nav-list">
+<li><a href="H000.html">H000 — Approved Medication and Routes</a></li>
+<li><a href="H035.html">H035 — Provider Level</a></li>
+<li><a href="H001.html">H001 — Provider Level</a></li>
+<li><a href="H002.html">H002 — Provider Level</a></li>
+<li><a href="H003.html">H003 — Provider Level</a></li>
+<li><a href="H004.html">H004 — Provider Level</a></li>
+<li><a href="H005.html">H005 — Provider Level</a></li>
+<li><a href="H007.html">H007 — Provider Level</a></li>
+<li><a href="H008.html">H008 — Provider Level</a></li>
+<li><a href="H009.html">H009 — Provider Level</a></li>
+<li><a href="H011.html">H011 — Provider Level</a></li>
+<li><a href="H012.html">H012 — Provider Level</a></li>
+<li><a href="H036.html">H036 — Provider Level</a></li>
+<li><a href="H013.html">H013 — Epinephrine (1:1,000) IM</a></li>
+<li><a href="H014.html">H014 — Provider Level</a></li>
+<li><a href="H015.html">H015 — Condition</a></li>
+<li><a href="H016.html">H016 — Provider Level</a></li>
+<li><a href="H017.html">H017 — Provider Level</a></li>
+<li><a href="H006.html">H006 — Provider Level</a></li>
+<li><a href="H018.html">H018 — Provider Level</a></li>
+<li><a href="H019.html">H019 — Waivered Medication</a></li>
+<li><a href="H042.html">H042 — Provider Level</a></li>
+<li><a href="H039.html">H039 — Condition</a></li>
+<li><a href="H020.html">H020 — Condition</a></li>
+<li><a href="H011.html">H011 — Provider Level</a></li>
+<li><a href="H022.html">H022 — Provider Level</a></li>
+<li><a href="H024.html">H024 — Route</a></li>
+<li><a href="H025.html">H025 — Route</a></li>
+<li><a href="H026.html">H026 — Provider Level</a></li>
+<li><a href="H027.html">H027 — Provider Level</a></li>
+<li><a href="H023.html">H023 — Provider Level</a></li>
+<li><a href="H028.html">H028 — Waivered Medication</a></li>
+<li><a href="H029.html">H029 — Provider Level</a></li>
+<li><a href="H030.html">H030 — Waivered Medication</a></li>
+<li><a href="H031.html">H031 — Provider Level</a></li>
+<li><a href="H037.html">H037 — Waivered Medication</a></li>
+<li><a href="H032.html">H032 — Provider Level</a></li>
+<li><a href="H033.html">H033 — Waivered Medication</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Special Situations</div><ul class="nav-list">
+<li><a href="I001.html">I001 — LAD = left anterior descending</a></li>
+<li><a style="outline:2px solid rgba(78,161,255,.35)" href="I003.html">I003 — MAINTENANCE OF IV INFUSIONS AND DEVICES</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Infectious Disease</div><ul class="nav-list">
+<li><a href="K001.html">K001 — during the event.</a></li>
+<li><a href="K003.html">K003 — YES</a></li>
+</ul></div>
+<div class="nav-section"><div class="nav-section-title">Extras</div><ul class="nav-list">
+<li><a href="../index.html">Search</a></li>
+<li><a href="about.html">About / How this site was built</a></li>
+</ul></div>
+  </aside>
+  <main class="main">
+    
+<h1>I003 — MAINTENANCE OF IV INFUSIONS AND DEVICES</h1>
+<div class="small">Special Situations • Pages 146-152</div>
+<div class="card">
+  <div class="small">Use the scanned pages to see the official tables/charts/algorithms. The extracted text is there for copy/paste and searchability.</div>
+</div>
+<h3>Extracted text (page 146)</h3><pre>I003 Revised: 5/11/2022 
+ 
+MAINTENANCE OF IV INFUSIONS AND DEVICES 
+a. Purpose 
+ 
+A patient that is being treated at one medical facility and requires ground transportation to another 
+medical facility should not suffer from a change in the standard of care during transport. The orderly 
+transfer of patients between medical facilities is provided for under the INTERHOSPITAL TRANSFER 
+protocol. This addendum is meant to allow for the maintenance of certain intravenous infusions and 
+devices during the course of the transfer. 
+ 
+It is not possible to foresee all possible interventions that a patient may be undergoing at the time of such 
+a transfer, however, the following considerations should be kept in mind: 
+ 
+The overall status of the patient should direct the resources that are used for the transfer. If the patient is 
+critically ill or injured, a nurse, paramedic or physician that is familiar with the patient should accompany 
+you during transport. If the patient “crashes” it is worth having an extra pair of hands available. 
+i. In the presence of a medication, procedure or device that is new to the patient (and that you 
+are unfamiliar with), you should have a nurse or physician that is familiar with the patient 
+accompany you during transport. 
+ii. In the presence of a medication, procedure or device that is not new to the patient you may 
+attend the patient without assistance if: 
+1. No complications are anticipated, and; 
+2. You can be familiarized with the medication, procedure or device before departure 
+from the sending facility, and; 
+3. Written orders from the sending physician are obtained or 
+4. The patient is used to controlling the medication, procedure or device on their own, are 
+currently capable of doing so, and the continuation of such has been approved by the 
+physician who is attending to the patient. 
+iii. When in doubt, ask for help. Contact the base hospital physician with any concerns BEFORE you 
+encounter problems, if at all possible. 
+ 
+b. General Procedures 
+ 
+ The following apply to each of the medications covered in this protocol. 
+i. Administration of these medications may not be initiated by EACH paramedics, unless covered 
+elsewhere in the protocols. 
+ii. If the medication is to be infused via an infusion pump, you must be familiar with the operation 
+of that particular pump or have a nurse accompany the patient during transport. 
+iii. You are responsible for the patency of the intravenous line. 
+iv. Know the concentration of the drug solution and follow the infusion rate that was ordered by 
+the treating physician. 
+v. Document the concentration, the infusion rate, and the total infusion amount in the prehospital 
+report. 
+vi. If infiltration occurs during infusion, discontinue immediately and contact the base hospital 
+physician. 
+vii. If any adverse reactions occur during infusion, discontinue immediately and contact the base 
+hospital physician. 
+viii. If you feel that you require assistance during transport, get assistance.</pre><h3>Extracted text (page 147)</h3><pre>I003 Revised: 5/11/2022 
+c. 
+Approved for Paramedic Level Transport 
+ 
+Medications 
+Skills 
+Activated Charcoal 
+Magnesium sulfate 
+Chest tube monitoring 
+Adenosine 
+Mannitol 
+Ventilators (ATV) 
+ 
+Restricted to 
+manipulation 
+of tidal volume, 
+respiratory 
+rate, FiO2, and 
+Peep ONLY 
+Albuterol/Xopenex 
+Methylprednisolone 
+Amiodarone 
+Metoclopramide 
+Antibiotics 
+Metaproterenol 
+Aspirin 
+Midazolam 
+Atropine 
+Morphine 
+Benzocaine spray 
+Narcan 
+Blood products 
+Nerve agent antidotes 
+ 
+Bumetanide 
+Nicardipine 
+ 
+Calcium 
+Nitroglycerin 
+ 
+Colloids 
+Nitrous oxide 
+ 
+Crystalloids 
+Octreotide 
+ 
+Cyanide antidote 
+Olanzapine 
+ 
+Dexamethasone 
+Ondansetron 
+ 
+Diazepam 
+Over‐the‐counter medications 
+ 
+Diltiazem 
+Oxytocin 
+ 
+Diphenhydramine 
+Pantoprazole 
+ 
+Dopamine 
+Potassium 
+ 
+Droperidol 
+Pralidoxime 
+ 
+Epinephrine 
+Promethazine 
+ 
+Fentanyl 
+Racemic epinephrine 
+ 
+Furosemide 
+Rocuronium(MAAM waivered paramedics only) 
+ 
+Glucagon 
+Sodium bicarbonate 
+ 
+Glycoprotein inhibitors 
+Terbutaline 
+ 
+Haloperidol 
+Tetracaine 
+ 
+Heparin 
+Thiamine 
+ 
+Hydrocortisone 
+Topical hemostatic agent 
+ 
+Hydromorphone 
+TPN 
+ 
+Insulin 
+Vasopressin 
+ 
+Ipratropium 
+Vecuronium (MAAM waivered paramedics only) 
+ 
+IV dextrose 
+Verapamil 
+ 
+Ketamine (pain/sedation) 
+Ziprasidone 
+ 
+Lidocaine 
+Any medication authorized in guidelines 
+ 
+Lorazepam 
+ 
+ 
+Low molecular weight 
+heparin</pre><h3>Extracted text (page 148)</h3><pre>I003 Revised: 5/11/2022 
+d. Registered Nurse or Physician Required During Transport 
+ 
+Thrombolytics 
+ 
+Propofol Infusion 
+ 
+Arterial lines (if actively in use) 
+ 
+Portable ventilators (that fall outside of above parameters of manipulation) 
+ 
+Balloon pumps 
+ 
+Transvenous pacing 
+ 
+Intracranial monitoring 
+ 
+Pericardiocentesis 
+ 
+Any other medication, device, or procedure not included in Ch2 scope, in the above list in Section III, or 
+with which you are not familiar. 
+ 
+Any concern that you need additional expertise available during transport 
+ 
+Attachments for Specific Procedures and Precautions for Paramedic Level Approved Transports 
+a. HEPARIN 
+ 
+Indications: Intravenous heparin is frequently administered as an anticoagulant to prevent clotting in the 
+setting of ischemic coronary artery disease, pulmonary embolism, or peripheral vascular conditions. 
+ 
+Mechanism of Action: inhibits the mechanisms of blood clotting and formation of fibrin clots by 
+inactivation of activated Factor X and inhibition of prothrombin’s conversion to thrombin 
+ 
+Contraindications: Severe thrombocytopenia and active bleeding 
+ 
+Complications: Hemorrhage from any site may occur, as well as, hypersensitivity signs and symptoms. 
+Hypotension may also occur during infusion. If any complication occurs during infusion, discontinue 
+infusing the medication and contact base hospital physician. 
+ 
+Procedure: Usually 20,000 or 40,000 units of heparin are added to 1,000 cc of normal saline. The 
+administration is dependent upon the patient’s weight. The usual infusion is 12‐18 units/kg/hr 
+depending on the indications. Maintain the infusion rate that was ordered by the treating physician. 
+ 
+b. NITROGLYCERIN 
+ 
+Indications: Nitroglycerin administration results in smooth muscle relaxation and consequential 
+dilatation of peripheral arteries and veins. These results in pooling of blood decreased left ventricular 
+end‐diastolic wedge pressure (preload), and coronary artery dilatation. These mechanisms are useful in 
+treating ischemic coronary states and hypertension. 
+ 
+Mechanism of Action: causes vasodilation that relieves tension on vascular smooth muscle and dilates 
+peripheral veins and arteries 
+ 
+Contraindications: Hypotension and shock may occur with even small amounts of nitroglycerin. Because 
+of absorption of nitrates into plastic, the amount of drug exiting the IV tubing may be much less than the 
+amount entering the tubing. There is no simple correction factor. The patient should be observed 
+clinically for pain relief, blood pressure changes and signs of poor perfusion. The infusion rate should be 
+adjusted accordingly, with Base Hospital approval. 
+ 
+Procedure: 
+i. Nitroglycerin is a concentrated drug that should be administered after dilution. Usual mixtures 
+include 25‐50 mg in 500 cc of D5W or NS. This yields a solution of 50‐100 mcg / ml. 
+ii. Discontinue the infusion and contact the Base Hospital physician if signs of poor perfusion 
+(pallor, sweating, prolonged capillary refill, or decreased mental alertness) occur, or with systolic 
+blood pressure less than 100 mmHg. 
+iii. Infusion rates may be increased, only through direct contact with the Base Hospital physician, 
+should the patient experience worsening ischemic chest pain or hypertension.</pre><h3>Extracted text (page 149)</h3><pre>I003 Revised: 5/11/2022 
+c. 
+ANTIBIOTICS 
+ 
+Indications: Antibiotics may be given IV in serious or life‐ threatening infections to rapidly achieve high 
+blood levels of the drug for maximum bacterial killing power. 
+ 
+Contraindications: In general, the treating physician will have considered the contraindications to 
+administration before the infusion is started. You should, however, review the patients’ previous allergy 
+history. If a patient gives a history of an allergic reaction to the drug, the infusion should be discontinued 
+and the Base Hospital should be notified immediately. 
+ 
+Complications: If allergic signs or symptoms develop (e.g., itching, rash, difficulty breathing, wheezing, 
+hypotension, etc.) discontinue the infusion immediately and notify the Base Hospital. Treat allergic 
+reactions per protocol. Occasionally, local irritation at the IV site may develop. Discontinue the infusion 
+and notify the Base Hospital if any complications occur. 
+ 
+d. BLOOD and BLOOD PRODUCTS 
+ 
+Indications: Blood or blood products administered intravenously may be lifesaving in hemorrhagic shock, 
+certain anemic states, and other hematological disorders. The treating physician will have considered the 
+indications prior to initiating the infusion. In general, you will be continuing the infusion of platelets or 
+fresh‐frozen plasma for certain bleeding disorders. 
+ 
+Contraindications: The treating physician will have considered the contraindications to blood transfusion. 
+Some patients may object to the transfusion of blood products for religious reasons (i.e., Jehovah’s 
+Witness). For problems, contact the Base Hospital. 
+ 
+Complications: Transfusion reactions and hypersensitivity reactions can occur after the onset of blood 
+product infusion. Symptoms may include restlessness, anxiety, flushing, chest or lumbar pain, 
+tachycardia, tachypnea, nausea, and shock. Occasionally bleeding from coagulopathy may develop. If 
+any of the signs or symptoms listed above develop after the initiation of the transfusion, the transfusion 
+should be immediately discontinued and the Base Hospital contacted for instructions. Shock, if present, 
+should be treated according to protocol. 
+ 
+Procedure: 
+i. Maintain infusion rates as indicated by the treating physician. 
+ii. All blood products should be administered through tubing with a filter. 
+iii. Document blood product number (with pen or sticker) to the permanent medical record and the 
+trip sheet left at the receiving hospital. 
+ 
+e. SOLUMEDROL / METHYLPREDNISOLONE 
+ 
+Indications: Methylprednisolone is a potent anti‐inflammatory steroid that is used for a wide variety of 
+conditions. Most frequently, you will encounter respiratory patients that have been placed on this 
+medication for acute exacerbations of their chronic disease process. Occasionally, patients with 
+neurologic sequelae secondary to a spinal cord injury will be placed on this medication in the hopes of 
+preventing further injury to the cord by spinal edema. 
+ 
+Mechanism of Action: A highly potent steroid with greater anti‐inflammatory activity than prednisolone 
+and lesser tendency to induce sodium and water retention. 
+ 
+Contraindications: Premature infants and patients with a known hypersensitivity to the drug. 
+ 
+Precautions: Rare instances of bronchospasm, bradycardia, and other cardiac arrhythmias have been 
+reported after large, rapid doses of intravenous methylprednisolone. 
+ 
+Procedures: Maintain the infusion as it was directed by the treating physician. 
+ 
+f. 
+VITAMINS / TPN / ELECTROLYTES 
+ 
+Indications: Intravenous vitamins or electrolytes may be infused when there is confirmed or suspected 
+deficiencies that require correction.</pre><h3>Extracted text (page 150)</h3><pre>I003 Revised: 5/11/2022 
+ 
+Contraindications: These will have been previously considered by the treating physician. 
+ 
+Precautions: None with vitamins. Potassium (K+) should be given at the prescribed rate (usually no 
+faster than 10 mg/hr). Infusion of intravenous potassium solutions may precipitate cardiac conduction 
+abnormalities. All patients being given intravenous potassium must be on a cardiac monitor. The 
+infusion rate must be watched very closely. 
+ 
+Procedure: Maintain at prescribed rate with patient on a cardiac monitor (for potassium supplements). 
+Infusion rate should be slowed if any burning or irritation occurs at the infusion site. Discontinue the 
+infusion and contact the Base Hospital immediately if any complications, including arrhythmias, occur. 
+ 
+g. INSULIN 
+ 
+Indications: Insulin, a hormone that is normally produced by the pancreas, is required by the body for 
+effective transport of glucose across cell membranes. Relative or absolute deficiencies in insulin can 
+result in hyperglycemia, non‐ketotic hyperosmolar coma, or diabetic ketoacidosis. 
+ 
+Mechanism of Action: Regulation of glucose metabolism by stimulating cellular uptake of glucose and 
+inhibits glucose output from the liver 
+ 
+Contraindications: Hypoglycemia or known allergy to naturally occurring (pork or beef products) 
+products. 
+ 
+Complications: The most frequent complication of exogenous insulin administration is hypoglycemia 
+which may manifest by such symptoms as sweating, dizziness, restlessness, headache, anxiety, irritability, 
+abnormal behavior, unsteady gait, slurred speech, blurred vision, personality changes, disorientation, 
+unconsciousness, or seizures. Allergic reactions can produce swelling, itching, redness, hives, 
+hypotension, diaphoresis, wheezing, difficulty breathing, or dysphagia. If any of these complications 
+occur during infusion contact the Base Hospital and discontinue the infusion immediately. 
+ 
+Procedure: 
+i. The most common insulin drip is composed of Regular Humulin. The insulin drip should be 
+prepared by the sending institution. A typical concentration is 50 units in 250 cc of NS (0.2 
+units/ml). 
+ii. Maintain drip rate as established by the treating physician. A typical loading dose for DKA is 0.1 
+units/kg, followed by an infusion of 0.1 units/ kg/hr Monitor patient’s blood sugar during initial 
+phase of transport and at least every 30 minutes thereafter. 
+iii. In the setting of a patient with a beta blocker overdose this could be significantly higher dosing. 
+iv. Monitor the patient for any changes in neurologic status or hemodynamic instability. 
+ 
+h. OCTREOTIDE 
+ 
+Indications: Esophageal Varices. 
+ 
+Contraindications: Sensitivity to medication. 
+ 
+Precautions: Not compatible with TPN, diazepam, or phenytoin. Severe hypoglycemia in diabetic 
+patients. Prolonged QT syndrome. 
+ 
+Procedure: Maintain drip at rate prescribed by physician. 
+ 
+I. 
+PANTROPRAZOLE 
+ 
+Indications: Erosive esophagitis. 
+ 
+Contraindications: Hypersensitivity to medication. 
+ 
+Mechanism of Action: Proton pump inhibitor that suppresses the final step in gastric acid production and 
+leads to inhibition of both basal and stimulated acid secretion 
+ 
+Precautions: Do not co‐administer with other medications in the IV line. Dizziness and headache may be 
+anticipated side effects 
+ 
+Procedure: Maintain drip rate as prescribed. Do not give IV push.</pre><h3>Extracted text (page 151)</h3><pre>I003 Revised: 5/11/2022 
+ 
+J. 
+GLYCOPROTEIN INHIBITORS 
+ 
+Indications: Acute coronary syndromes and PCI. 
+ 
+Contraindications: These will have been previously considered by the treating physician. 
+ 
+Precautions: Observe for any signs of bleeding, including intracranial. 
+ 
+Procedure: Hypotension or signs of intracranial bleeding occur, immediately stop the infusion and 
+contact medical control. 
+ 
+k. 
+NICARDIPINE 
+ 
+Indications: Angina. Hypertensive crisis. 
+ 
+Mechanism of Action: Calcium channel blocker that inhibits the transmembrane influx of calcium ions 
+into the myocardium and selectively into coronary vascular smooth muscles without altering serum 
+calcium concentrations 
+ 
+Contraindications: Atrial fibrillation and flutter associated with accessory bypass tracts. High‐degree AV 
+heart blocks (AVHB). Hypotension. Bradycardia. Cardiogenic shock. 
+ 
+Precautions: Confusion, slurred speech, somnolence, hypotension, syncope, and bradycardia are all 
+potential serious side effects of this medication. 
+ 
+Procedure: Maintain at prescribed rate with patient on a cardiac monitor. Monitor blood pressure 
+closely. 
+ 
+l. 
+OXYTOCIN 
+ 
+Indications: Control of post‐partum bleeding. (NOTE ‐ If oxytocin is being used to induce labor, the 
+patient should be accompanied by obstetrical personnel.) 
+ 
+Mechanism of Action: Promotes uterine contractions by increasing intracellular concentrations of calcium 
+in uterine myometrial tissue 
+ 
+Contraindications: These will have been previously considered by the treating physician. 
+ 
+Precautions: Tachycardia, PVC’s, hypotension and vomiting may be seen as side effects of this 
+medication. 
+ 
+Procedure: Maintain at prescribed rate in liter of normal saline. Consider second IV placement for fluid 
+resuscitation purposes. 
+ 
+l. 
+MAGNESIUM 
+ 
+Indications: (1) Tocolysis (often in conjunction with Beta‐agonist therapy), and (2) treatment of 
+preeclampsia/eclampsia. 
+ 
+Mechanism of Action: Exact mechanism unknown. Speculated that magnesium may decrease myometrial 
+contractility 
+ 
+Contraindications: These will have been previously considered by the treating physician. 
+ 
+Precautions: Apnea, AV Block, Cardiac arrest and pulmonary edema may be seen as side effects of this 
+medication. 
+ 
+Procedure: Maintain at prescribed rate in liter of normal saline. Obtain baseline DTR’s and periodically 
+re‐evaluate throughout transport (Note: diminished DTR’s tend to precede respiratory depression and 
+AVHB). Consider second IV placement for fluid resuscitation and medication administration purposes. 
+Calcium (under direct physician direction) may be utilized to reverse toxic effects of magnesium. 
+ 
+l. 
+AMIODARONE 
+ Indications: Control of ventricular arrhythmias. Intravenous form of medication may occasionally be 
+used for the control of atrial fibrillation.</pre><h3>Extracted text (page 152)</h3><pre>I003 Revised: 5/11/2022 
+ Mechanism of Action: Antiarrhythmic with predominant class III effects of lengthening cardiac action 
+potential and blocking myocardial potassium channels lead to slowed conduction and prolonged 
+refractoriness. Also has sodium channel blockade, antisympathetic action and negative inotropy in nodal 
+tissue. 
+ Contraindications: Cardiogenic shock. Symptomatic bradyarrhythmias. 
+ Precautions: Amiodarone may have significant proarrhythmic effects. These may be more pronounced in 
+patients on other antiarrhythmic medications and antibiotic medications. Use in children and infants 
+requires a pediatric specialty team for transport. 
+ Procedure: Careful cardiac and hemodynamic monitoring is essential. Be particularly aware of 
+prolonging QTc intervals as a harbinger of multiform ventricular tachycardia. Typical IV loading dose is 
+ 150 mg over 10 minutes. Maintenance drip is 0.5‐1 mg/min. Follow physician’s administration orders 
+throughout transport. 
+ 
+m. LIDOCAINE 
+ Indications: Control of ventricular arrhythmias 
+ Mechanism of Action: Antiarrhythmic that blocks sodium channels 
+ Contraindications: These will have been previously considered by the treating physician. 
+ Precautions: Cardiac arrhythmias due to proarrhythmic effects. Neurologic‐oriented side effects 
+(including seizures) with overdosage. Discontinue infusion if patient becomes symptomatically 
+bradycardic or develops AVHB. 
+ Procedure: Maintain prescribed dosage regimen throughout transport. Typical drip rates range from 2‐4 
+mg/min. 
+ 
+n. KETAMINE 
+ Indications: Sedation, Pain 
+ Mechanism of Action: Rapid acting general anesthetic that produces analgesia 
+ Contraindications: These will have been previously considered by the treating physician. 
+ Precautions: Continuous cardiovascular monitoring. Hypertension and tachycardia are common side 
+effects, however bradycardia and hypotension can occur. 
+ Procedure: Maintain prescribed dosage regimen throughout transport. Typical drip rates range from 0.1‐
+0.5mg/min. 
+ 
+o. EPINEPHRINE 
+ Indications: Hypotension, bradycardia, anaphylaxis 
+ Contraindications: These will have been previously considered by the treating physician. 
+ Mechanism of Action: Sympathomimetic catecholamine that acts on alpha and beta adrenergic receptors. 
+ Precautions: Continuous cardiovascular monitoring required. May cause hypertension and 
+tachydysrhythmias 
+ Procedure: Maintain prescribed dosage regimen throughout transport. Typical drip rates range from 
+0.05‐2mcg/kg/min 
+ Indications: Treatment of hypotension and bradycardia</pre>
+<details open>
+  <summary><span class="badge">Scanned pages (tables/charts preserved)</span></summary>
+  <div class="card"><div class="small">Page 146 scan</div><img class="page-scan" src="../assets/page-146.jpg" alt="Page 146 scan"></div><div class="card"><div class="small">Page 147 scan</div><img class="page-scan" src="../assets/page-147.jpg" alt="Page 147 scan"></div><div class="card"><div class="small">Page 148 scan</div><img class="page-scan" src="../assets/page-148.jpg" alt="Page 148 scan"></div><div class="card"><div class="small">Page 149 scan</div><img class="page-scan" src="../assets/page-149.jpg" alt="Page 149 scan"></div><div class="card"><div class="small">Page 150 scan</div><img class="page-scan" src="../assets/page-150.jpg" alt="Page 150 scan"></div><div class="card"><div class="small">Page 151 scan</div><img class="page-scan" src="../assets/page-151.jpg" alt="Page 151 scan"></div><div class="card"><div class="small">Page 152 scan</div><img class="page-scan" src="../assets/page-152.jpg" alt="Page 152 scan"></div>
+</details>
+
+  </main>
+</div>
+<script>
+document.getElementById('go')?.addEventListener('click', ()=>{
+  const q=document.getElementById('q').value.trim();
+  if(!q) return;
+  window.location.href = 'index.html?q=' + encodeURIComponent(q);
+});
+document.getElementById('q')?.addEventListener('keydown', (e)=>{
+  if(e.key==='Enter') document.getElementById('go').click();
+});
+</script>
+</body>
+</html>
