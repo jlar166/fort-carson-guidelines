@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pediatric Overview - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 1/2/2020</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="search-wrapper">
+<div class="search-container">
+<input class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures..." type="text"/>
+<div id="searchResults"></div>
+</div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a class="active" href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li><li><a href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li><li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h3>General Pediatric Overview (A006)</h3>
+<div class="guideline-section">
+<h4>Description</h4>
+<p>Pediatric patients are defined as birth until patient's weight based calculations equal the
+                            adult dose.</p>
+<ul>
+<li><strong>Benzodiazepines</strong> are an exception to the above statement.</li>
+</ul>
+<h4>Medical Treatment Age Ranges</h4>
+<p>Age ranges will differ for transport as well as MAAM. Refer to specific guidelines:</p>
+<ul>
+<li>For specific facility, see <a href="destination.html">DESTINATION GUIDELINE</a></li>
+<li>For consent, see <a href="consent.html">CONSENT GUIDELINE</a></li>
+<li>For MAAM, see <a href="waivers.html">WAIVER GUIDELINE</a></li>
+<li>For surgical cricothyrotomy, see <a href="airway.html">AIRWAY GUIDELINE</a></li>
+</ul>
+<h4>Normal Pediatric Vital Sign Ranges</h4>
+<div class="destination-wrapper">
+<table class="destination-table">
+<thead>
+<tr>
+<th>Pediatric Age Group</th>
+<th>Blood Glucose</th>
+<th>Respiratory Rate</th>
+<th>Heart Rate</th>
+<th>Systolic BP</th>
+<th>Systolic Hypotension</th>
+<th>Weight in lbs</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background:#e6e6fa;">
+<td data-label="Pediatric Age Group"><strong>Neonate</strong> (&lt; 28 days)</td>
+<td data-label="Blood Glucose">40 to 99</td>
+<td data-label="Respiratory Rate">30 to 53</td>
+<td data-label="Heart Rate">100 to 205</td>
+<td data-label="Systolic BP">67 to 84</td>
+<td data-label="Systolic Hypotension">
+                                            &lt; 60</td>
+<td data-label="Weight in lbs">4.5 to 7</td>
+</tr>
+<tr style="background:#e0ffff;">
+<td data-label="Pediatric Age Group"><strong>Infant</strong> (1-12 months)</td>
+<td data-label="Blood Glucose">127 +/- 24</td>
+<td data-label="Respiratory Rate">30 to 53</td>
+<td data-label="Heart Rate">100 to 190</td>
+<td data-label="Systolic BP">72 to 104</td>
+<td data-label="Systolic Hypotension">
+                                            &lt; 70</td>
+<td data-label="Weight in lbs">9 to 22</td>
+</tr>
+<tr style="background:#f0f8ff;">
+<td data-label="Pediatric Age Group"><strong>Toddler</strong> (1-2 years)</td>
+<td data-label="Blood Glucose">137 +/- 24</td>
+<td data-label="Respiratory Rate">22 to 37</td>
+<td data-label="Heart Rate">98 to 140</td>
+<td data-label="Systolic BP">86 to 106</td>
+<td data-label="Systolic Hypotension">
+                                            &lt; 70 + (age x2)</td>
+<td data-label="Weight in lbs">22 to 31</td>
+</tr>
+<tr style="background:#fff0f5;">
+<td data-label="Pediatric Age Group"><strong>Preschooler</strong> (3-5 years)
+                                        </td>
+<td data-label="Blood Glucose">128 +/- 24</td>
+<td data-label="Respiratory Rate">20 to 28</td>
+<td data-label="Heart Rate">80 to 120</td>
+<td data-label="Systolic BP">89 to 112</td>
+<td data-label="Systolic Hypotension">
+                                            &lt; 70 + (age x2)</td>
+<td data-label="Weight in lbs">31 to 40</td>
+</tr>
+<tr style="background:#f5f5dc;">
+<td data-label="Pediatric Age Group"><strong>School Age</strong> (6-11 years)
+                                        </td>
+<td data-label="Blood Glucose">90 to 180</td>
+<td data-label="Respiratory Rate">18 to 25</td>
+<td data-label="Heart Rate">75 to 118</td>
+<td data-label="Systolic BP">97 to 115</td>
+<td data-label="Systolic Hypotension">
+                                            &lt; 70 + (age x2)</td>
+<td data-label="Weight in lbs">41 to 92</td>
+</tr>
+<tr style="background:#f0fff0;">
+<td data-label="Pediatric Age Group"><strong>Adolescent</strong> (12 to 15
+                                            years)</td>
+<td data-label="Blood Glucose">90 to 130</td>
+<td data-label="Respiratory Rate">12 to 20</td>
+<td data-label="Heart Rate">60 to 100</td>
+<td data-label="Systolic BP">110 to 131</td>
+<td data-label="Systolic Hypotension">
+                                            &lt; 90</td>
+<td data-label="Weight in lbs">&gt; 110</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.8em; font-style:italic;">Normal pediatric SpO2 values have not yet been
+                            decisively recognized... In general, a SpO2 of &lt; 92% should be a cause of concern.</p>
+<h4>Brief Resolved Unexplained Event (BRUE)</h4>
+<p><em>Formerly known as Apparent Life Threatening Event (ALTE)</em></p>
+<ol type="a">
+<li>An infant &lt; 1 year of age with episode frightening to the observer characterized
+                                            by cyanosis or pale complexion; absent, decreased, or irregular breathing;
+                                            marked change in muscle tone (hyper- or hypotonia); or altered
+                                            responsiveness but resolved.</li>
+<li>BRUE is diagnosed only when there is no explanation for a qualifying event after
+                                        conducting appropriate history and physical examination.</li>
+<li><strong>Any child with an BRUE SHOULD be transported to ED for evaluation.
+                                            Monitor vital signs en route.</strong></li>
+<li>Make sure to document the following:
+                                        <ul>
+<li>Observer's impression of color, respirations, tone</li>
+<li>Was child apneic, cyanotic, or limp?</li>
+<li>Seizure-like activity?</li>
+<li>Resuscitation attempted? Spontaneous resolution?</li>
+<li>Duration of event?</li>
+</ul>
+</li>
+</ol>
+<h4>Special Considerations</h4>
+<div class="warning-box" style="background:#fff3cd; color:#856404; padding:15px; border:1px solid #ffeeba; border-radius:5px;">
+<ol type="a">
+<li>For pediatrics, reference Pediatric Field Guide, Broselow Tape, Handtevy
+                                            Guide, or approved apps.</li>
+<li>Airways are smaller, softer, and easier to obstruct or collapse.</li>
+<li>Respiratory reserve is small. Minor insults (positioning, emesis, air in
+                                            stomach) can lead to major problems.</li>
+<li>Circulatory reserve is small. Loss of one unit of blood sufficient for
+                                            severe shock. 500 mL unnecessary fluid can result in acute pulmonary edema.
+                                        </li>
+<li>Vital signs and LOC are difficult to assess. <strong>Listen to the
+                                                parents.</strong> They know when changes have occurred.</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

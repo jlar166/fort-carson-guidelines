@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pain Management - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 10/29/2023</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="search-wrapper">
+<div class="search-container">
+<input class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures..." type="text"/>
+<div id="searchResults"></div>
+</div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li><li><a href="maam.html">MAAM</a></li>
+<li><a class="active" href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li><li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h3>Pain Management (B004)</h3>
+<div class="guideline-section">
+<div class="flowchart">
+<div class="flow-box start">
+                                Initial assessment<br/>
+                                Maintain patent airway and <span style="text-decoration: underline; color: #0056b3;">OXYGENATION</span><br/>
+                                Acquire VS &amp; early 12-lead EKG as clinically indicated<br/>
+                                Use an age appropriate pain scale to measure patient's level of pain
+                            </div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">
+                                General supportive care<br/>
+                                Manage pain with non-invasive treatments (if applicable) such as position of comfort,
+                                rest, ice, splinting and elevation<br/>
+                                Transport &amp; monitor VS/condition
+                            </div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action red-border">
+                                Establish vascular access, if possible
+                            </div>
+<div class="flow-arrow">↓</div>
+</div>
+<div class="protocol-split">
+<!-- Mild to Moderate Pain -->
+<div class="protocol-col">
+<div class="protocol-header mild">Mild to Moderate Pain</div>
+<div class="protocol-body">
+<div class="med-block">
+<div class="med-name"><a href="med-list.html#acetaminophen">ACETAMINOPHEN
+                                                IV/IO:</a></div>
+<div class="med-details">
+<ul>
+<li><strong style="text-decoration: underline;">ADULT:</strong>
+<ul>
+<li>
+                                                            &lt; 50 kg: 500 mg</li>
+<li>≥ 50 kg: 1,000 mg</li>
+</ul>
+</li>
+<li><strong style="text-decoration: underline; color: purple;">Pediatric:</strong>
+                                                    15 mg/kg, MAX dose of 1000 mg</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Moderate to Severe Pain -->
+<div class="protocol-col">
+<div class="protocol-header severe">Moderate to Severe Pain</div>
+<div class="protocol-body">
+<div class="med-block">
+<div class="med-name"><a href="med-list.html#ketamine">KETAMINE:</a></div>
+<div>PRN every 15 minutes</div>
+<div class="med-details">
+<ul>
+<li><strong style="text-decoration: underline;">Adult:</strong> 30 mg
+                                                    IV/IO or 50 mg IM/IN (up to 3 total doses)
+                                                    <ul>
+<li><strong style="color: red;">Contact Medical Control for
+                                                                additional doses</strong></li>
+</ul>
+</li>
+<li>IV/IO Dose: If time allows, add to a 50 mL NS or D5W bag, and infuse
+                                                    over 5-10 minutes</li>
+<li><strong style="text-decoration: underline; color: purple;">PEDIATRIC
+                                                        age≥7:</strong> 0.3 mg/kg IV/IO or 0.5 mg/kg IM/IN.
+                                                    <ul>
+<li>(up to 3 total doses); <strong style="color: red;">contact
+                                                                Medical Control for additional doses</strong></li>
+</ul>
+</li>
+<li>IV/IO Dose: If time allows, add to a 50 mL NS or D5W bag, and infuse
+                                                    over 5-10 minutes</li>
+</ul>
+</div>
+</div>
+<div class="med-block">
+<div class="med-name"><a href="med-list.html#fentanyl">FENTANYL:</a></div>
+<div>PRN every 10 minutes</div>
+<div class="med-details">
+<ul>
+<li><strong style="text-decoration: underline; color: #b8860b;">ADULT:</strong>
+                                                    50-100 mcg slow bolus IV/IO or IN/IM</li>
+<li><strong style="text-decoration: underline; color: purple;">PEDIATRIC:</strong>
+                                                    1 mcg/kg slow bolus IV/IO or IN/IM.</li>
+</ul>
+</div>
+<div style="text-align: center; margin: 10px 0; font-weight: bold; background: #ffffcc;">
+                                            OR</div>
+</div>
+<div class="med-block">
+<div class="med-name"><a href="med-list.html#hydromorphone">HYDROMORPHONE:</a>
+</div>
+<div>NOT REPEATED</div>
+<div class="med-details">
+<ul>
+<li><strong style="text-decoration: underline;">ADULT:</strong> 0.5 mg
+                                                    slow bolus IV/IO or IM</li>
+<li><strong style="text-decoration: underline; color: purple;">PEDIATRIC:</strong>
+                                                    not allowed</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="guideline-section" style="margin-top: 30px;">
+<h5>Descriptions</h5>
+<ol type="a">
+<li>This guideline is designed to assist the prehospital provider effectively assess and
+                                    manage patient pain and discomfort in the prehospital environment.</li>
+<li>The objective of pain management is not the complete relief of all pain, but rather,
+                                    to make a patient's pain tolerable to allow for assessment, treatment, and
+                                    transport.</li>
+</ol>
+<h5>Precautions</h5>
+<ol type="a">
+<li>Most pain medications should only be given to hemodynamically stable patients and
+                                    titrated slowly to effect. In hemodynamically unstable patients, consider giving
+                                    smaller, incremental doses of <em>FENTANYL</em> or <em>KETAMINE</em>.</li>
+<li>Pain medications may cause changes in hemodynamic status and/or respiratory
+                                    depression (including apnea) that can occur suddenly and without warning and are
+                                    more common in children and the elderly.</li>
+<li>Chest wall rigidity has been reported with rapid administration of <em>FENTANYL</em>
+</li>
+<li>Strongly consider ½ typical dosing in elderly patients or when combining
+                                    benzodiazepines and opioids</li>
+<li><em>HYDROMORPHONE</em> has a slower onset and much longer period of effect (caution
+                                    on stacking doses)</li>
+</ol>
+<h5>General Patient Care Requirements</h5>
+<ol type="a">
+<li>All patients receiving pain medication should receive constant ECG, SpO2, EtCO2 and
+                                    blood pressure monitoring. When this is not possible (i.e., in a back country
+                                    environment), pulse oximetry and constant verbal engagement with the patient are the
+                                    minimum monitoring requirements.</li>
+</ol>
+<h5>Other Medication Options</h5>
+<ol type="a">
+<li>The administration of a combination of benzodiazepines and opiates, for the purpose
+                                    of pain management with associated anxiety is permitted.
+                                    <ul>
+<li>Ensure that the patient can independently maintain an open airway and normal
+                                            breathing pattern, maintain normal hemodynamics, respond appropriately to
+                                            physical stimulation and verbal commands.</li>
+</ul>
+</li>
+<li>Consider an antiemetic if the patient develops nausea or vomiting or has a history
+                                    of nausea with opiates.</li>
+</ol>
+<h5>Special Considerations</h5>
+<ol type="a">
+<li>In trauma pain is secondary, look for major bleeding or life threats first. Once
+                                    stabilized consider pain management.</li>
+<li><em>FENTANYL</em> is the first line medication for pain associated with ACS and
+                                    pregnant patients requiring <em>CARDIOVERSION</em> or <em>TRANSCUTANEOUS
+                                        PACING</em>, unless allergy exists.</li>
+<li>For patients with history of substance abuse, co-morbidities or mild to moderate
+                                    pain, consider non-narcotic options to manage pain if applicable.</li>
+</ol>
+</div>
+<div style="text-align: right; margin-top: 20px;">
+<span class="badge" style="background: white; color: black; border: 1px solid #333;">EMT</span>
+<span class="badge badge-emt">EMT-IV</span>
+<span class="badge badge-paramedic">Paramedic</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Allergy/Anaphylaxis - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 5/19/2022</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="search-wrapper">
+<div class="search-container">
+<input class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures..." type="text"/>
+<div id="searchResults"></div>
+</div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li><li><a href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a class="active" href="allergic.html">Allergy/Anaphylaxis</a></li><li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div></div></div></aside>
+<main class="content-area">
+<div class="guideline-card">
+<h3>Allergy/Anaphylaxis (E005)</h3>
+<div class="guideline-section">
+<h4>Moderate to Severe Allergic Reaction</h4>
+<strong>First-Line Treatment:</strong>
+<ul>
+<li><strong>Epinephrine 1:1,000 IM:</strong>
+<ul>
+<li>Adult: 0.3mg (0.3mL) IM every 3-5min</li>
+<li>Peds: 0.01mg/kg (0.01mL/kg) IM every 3-5min</li>
+</ul>
+</li>
+<li><strong>Dexamethasone:</strong>
+<ul>
+<li>Adult: 10mg IV/IO/IM/PO</li>
+<li>Peds: 0.5mg/kg IV/IO/IM/PO (max 10mg)</li>
+</ul>
+</li>
+<li><strong>Diphenhydramine (Benadryl):</strong>
+<ul>
+<li>Adult: 50mg IV/IO/IM/PO</li>
+<li>Peds: 1-2mg/kg IV/IO/IM/PO (max 50mg)</li>
+</ul>
+</li>
+</ul>
+<strong>If Dyspnea present:</strong>
+<ul>
+<li><strong>Albuterol Nebulizer:</strong>
+<ul>
+<li>Adult/Peds &gt;2: 2.5mg in 3mL NS every 10min</li>
+<li>Peds &lt;2: 1.25mg in 3mL NS</li>
+</ul>
+</li>
+<li>Consider CPAP if unresolved</li>
+</ul>
+<strong>If Signs of Poor Perfusion:</strong>
+<ul>
+<li><strong>Epinephrine Infusion:</strong> 1mg in 1,000mL NS wide open to gravity
+                                <ul>
+<li>Titrate to BP &gt;90 systolic, return of distal pulses, improved mental status</li>
+</ul>
+</li>
+</ul>
+<h4>Generalized Allergic Reaction (Mild)</h4>
+<ul>
+<li><strong>Diphenhydramine:</strong> Same dosing as above</li>
+<li>General supportive care</li>
+</ul>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

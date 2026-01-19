@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MAAM - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>Fort Carson Fire &amp; EMS</h1>
+<p class="subtitle">Prehospital Practice Guidelines</p>
+<p class="revision-date">Revised: 01/2026</p>
+<div class="header-controls">
+<button aria-label="Toggle Dark Mode" class="icon-btn" id="theme-toggle">
+<i class="fas fa-moon"></i>
+</button>
+<button aria-label="Print Page" class="icon-btn" id="print-btn">
+<i class="fas fa-print"></i>
+</button>
+</div>
+</header>
+<div class="search-container">
+<input class="search-box" id="search-input" placeholder="Search guidelines..." type="text"/>
+<div class="search-results" id="search-results"></div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li>
+<li><a class="active" href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+<li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h2>Medication Assisted Airway Management (MAAM)</h2>
+<!-- Image 1 Content -->
+<div class="guideline-section">
+<h4>Description</h4>
+<ol type="a">
+<li>Guideline may only be utilized by Paramedics who have a current waiver by the medical
+                                director. MAAM can only be used for patients that are being treated on federal land or
+                                en route to/from a federal installation.
+                                <ul>
+<li>MAAM can be time consuming and is never an emergent airway. It is a complex
+                                        airway management technique that requires substantial organization and
+                                        understanding on the part of the paramedic.</li>
+</ul>
+</li>
+<li>MAAM certified paramedics must maintain proficiency as established by local medical
+                                director.</li>
+<li>All medications in this guideline will be given by standing order.
+                                <ul>
+<li>Only MAAM waivered paramedics are allowed to administer MAAM specific
+                                        medications.</li>
+</ul>
+</li>
+</ol>
+<h4>Indications (general)</h4>
+<ol type="a">
+<li>Age of the patient ≥13 years old</li>
+<li>MAAM candidates include, but not limited to;
+                                <ul>
+<li>Combative closed head injury patients, with or without trismus; or suspected
+                                        subarachnoid hemorrhage, intracranial masses, or ischemic strokes resulting in
+                                        significant impairment of mental status with resultant combativeness and/or
+                                        trismus.</li>
+<li>Glasgow Coma Scale ≤ 8</li>
+<li>Status seizures</li>
+<li>Severe respiratory failure and or impairment with an intact gag reflex or
+                                        imminent respiratory arrest</li>
+</ul>
+</li>
+</ol>
+<h4>Selection Criteria</h4>
+<ol type="a">
+<li>Principles of good selection will result in avoidance of almost all of the common
+                                difficulties in failing to secure a tracheal intubation.</li>
+<li>There are three (3) basic rules regarding patient selection that must be reviewed every
+                                time a MAAM procedure is considered. These rules incorporate and summarize the general
+                                concepts of selection criteria outlined in detail in the MAAM course and are formatted
+                                as questions.
+                                <ul>
+<li><strong>Can I get a good facial seal with the Bag-Valve-Mask?</strong></li>
+<li><strong>Is the airway patent?</strong></li>
+<li><strong>Do I think I can place an advanced airway in this patient?</strong></li>
+</ul>
+</li>
+</ol>
+<h4>Contraindications</h4>
+<ol type="a">
+<li>Any absolute contraindication to the induction agent or paralytic</li>
+<li>Patients who <strong>DO NOT</strong> meet the selection criteria for intubation as
+                                discussed above</li>
+<li>Patients who <strong>DO NOT</strong> possess a gag reflex, rendering MAAM medications
+                                unnecessary</li>
+<li>Age of the patient <strong>
+                                    &lt;13 YEARS OLD</strong>
+</li>
+</ol>
+<h4>Complications</h4>
+<ol type="a">
+<li>Cardiac dysrhythmias related to the use of succinylcholine</li>
+<li>Malignant Hyperthermia or the suspected presence of pseudocholinesterase deficiency</li>
+<li>Failure to Intubate</li>
+<li>Unrecognized esophageal intubation</li>
+<li>Vomiting and aspiration</li>
+<li>Hypotension</li>
+<li>Excessive gagging on back-up airway when used in failed intubations</li>
+</ol>
+</div>
+<!-- Flowchart (Image 0) -->
+<div class="guideline-section">
+<h4>MAAM Algorithm</h4>
+<!-- Initial Decision Box -->
+<div class="protocol-box">
+<ol class="no-margin-list">
+<li>Can I get a good facial seal with the Bag-Valve-Mask?</li>
+<li>Is the airway patent?</li>
+<li>Do I think I can place and advanced airway?</li>
+<li>Are there valid indications?</li>
+<li>Is the patient ≥ 13 years old</li>
+</ol>
+</div>
+<!-- Decision Split -->
+<div class="protocol-split" style="margin-top: 20px;">
+<div class="protocol-col">
+<div class="bg-green" style="color: white; padding: 10px; border-radius: 50px; display: inline-block; text-align: center; width: 60px; font-weight: bold; margin-bottom: 10px;">
+                                    YES</div>
+<div class="protocol-box" style="margin-top: 10px;">
+<strong>Attach all monitoring devices (EtCO2/ EKG/SpO2/ NIBP)</strong><br/>
+                                    Preoxygenate 3 to 5 minutes<br/>
+                                    Discuss airway back up plan
+                                </div>
+<div class="protocol-box" style="margin-top: 10px; border-color: red; border-width: 2px;">
+<strong>Establish Vascular Access</strong>
+<ul>
+<li>Normotensive: Administer 250 to 500 mL NS IV/IO</li>
+<li>Hypoperfusion: Follow <a href="supportive-care.html">FLUID THERAPY
+                                                GUIDELINE</a></li>
+</ul>
+</div>
+<div class="protocol-box" style="margin-top: 10px; border-color: blue;">
+                                    If inadequate perfusion initiate <span style="color: blue; text-decoration: underline;">EPINEPHRINE INFUSION</span>
+</div>
+<div class="protocol-box" style="margin-top: 10px;">
+<strong>Equipment set up</strong>
+<ul>
+<li>Video Laryngoscopy (Preferred) or blade/handle</li>
+<li>Supraglottic Airway</li>
+<li>Bougie/stylet</li>
+<li>Suction</li>
+<li>ET Tube with 10 mL syringe</li>
+<li>Securing device</li>
+<li>Cricothyrotomy kit</li>
+</ul>
+</div>
+<!-- Waivered ONLY Section -->
+<div class="protocol-box" style="margin-top: 10px; border: 3px solid #8B4513;">
+<div style="background-color: #8B4513; color: white; padding: 5px; text-align: center; font-weight: bold; margin: -10px -10px 10px -10px;">
+                                        ***MAAM Waivered Paramedic ONLY***</div>
+<strong>Step 1: Induce</strong>
+<ul>
+<li><a href="med-list.html#ketamine">KETAMINE</a>: 200 mg IV/IO</li>
+<div style="text-align: center;">or</div>
+<li><a href="med-list.html#midazolam">MIDAZOLAM</a>: 5 mg IV/IO</li>
+</ul>
+<strong>Step 2: Paralyze</strong>
+<ul>
+<li><a href="med-list.html#rocuronium">ROCURONIUM</a>: 100 mg IV/IO</li>
+<div style="text-align: center;">or</div>
+<li><a href="med-list.html#succinylcholine">SUCCINYLCHOLINE</a>: 200 mg IV/IO
+                                        </li>
+</ul>
+</div>
+<!-- Steps 3-5 -->
+<div class="protocol-box" style="margin-top: 10px;">
+<strong>Step 3: Insert Advanced Airway:</strong>
+<ul>
+<li>See <a href="airway.html">AIRWAY MANAGEMENT GUIDELINE</a></li>
+<li>Ensure a NC is placed at high flow during attempts</li>
+</ul>
+<strong>Step 4: Confirm advanced airway placement (4)</strong>
+<ul>
+<li>Positive waveform capnography (print)</li>
+<li>Bilateral breath sounds</li>
+<li>Negative epigastric sounds</li>
+<li>One additional method</li>
+</ul>
+<strong>Step 5: Secure advanced airway</strong>
+<ul>
+<li>Place OG Tube (if allowed AND time allows)</li>
+</ul>
+</div>
+<!-- Step 6 Sedation -->
+<div class="protocol-box" style="margin-top: 10px; border-color: blue;">
+<strong>Step 6: Sedation:</strong> PRN every 10 minutes
+                                    <ul>
+<li><a href="med-list.html#ketamine">KETAMINE</a>: 100 mg IV/IO</li>
+<div style="text-align: center;">OR</div>
+<li><a href="med-list.html#midazolam">MIDAZOLAM</a>: Up to 5 mg IV/IO</li>
+<div style="text-align: center;">AND/or</div>
+<li><a href="med-list.html#fentanyl">FENTANYL</a>: 50-100 mcg IV/IO</li>
+</ul>
+</div>
+</div>
+<!-- Right Column (NO path & Special Considerations) -->
+<div class="protocol-col">
+<div style="display: flex; flex-direction: column; align-items: center;">
+<div class="bg-red" style="color: white; padding: 10px; border-radius: 50px; display: inline-block; text-align: center; width: 60px; font-weight: bold; margin-bottom: 20px;">
+                                        NO</div>
+<div class="protocol-box" style="width: 100%;">
+                                        Monitor EtCO2/SpO2 and manage the airway utilizing the <a href="airway.html">AIRWAY MANAGEMENT GUIDELINE</a> as best as possible
+                                    </div>
+<div class="protocol-box" style="background-color: black; color: white; margin-top: 30px; width: 100%;">
+<div style="text-align: center; border-bottom: 1px solid white; padding-bottom: 5px; margin-bottom: 5px;">
+<strong>Special Considerations</strong>
+</div>
+<ul style="font-size: 0.9em;">
+<li>When applicable, discuss procedure with patient and/or family members.
+                                                <ul>
+<li>Remember to check if there is a valid DNR in place.</li>
+</ul>
+</li>
+<li>Succinylcholine is ONLY to be given once.</li>
+<li>It is anticipated that virtually no patient will ever require surgical
+                                                cricothyrotomy as an emergent alternate airway.
+                                                <ul>
+<li>It should ONLY be utilized if the patient continues to
+                                                        deteriorate due to an inadequate airway.</li>
+</ul>
+</li>
+<li><span style="color: lightblue;">VECURONIUM</span> can be administered at
+                                                10 mg IV/IO to maintain paralysis for long distance transports.</li>
+<li>Documentation is critical, describe a detailed account of the event.
+                                            </li>
+<li>Procedure <strong>MUST</strong> be followed by sedation</li>
+<li>Watch for post procedure hypoperfusion and be ready for resuscitation.
+                                            </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Algorithm Flowcharts - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<style>
+        .algorithm-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .algorithm-title {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .flow-box {
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 300px;
+            font-weight: 500;
+        }
+
+        .flow-box.start {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .flow-box.decision {
+            background: #feca57;
+            color: #333;
+            transform: rotate(0deg);
+            border-radius: 5px;
+            border: 3px solid #ff9f43;
+        }
+
+        .flow-box.action {
+            background: #54a0ff;
+            color: white;
+        }
+
+        .flow-box.action.green {
+            background: #28a745;
+        }
+
+        .flow-box.action.red {
+            background: #dc3545;
+        }
+
+        .flow-box.action.purple {
+            background: #5f27cd;
+        }
+
+        .flow-box.end {
+            background: #333;
+            color: white;
+        }
+
+        .flow-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #667eea;
+            font-size: 1.5em;
+            padding: 5px 0;
+        }
+
+        .flow-arrow span {
+            font-size: 0.6em;
+            color: #666;
+        }
+
+        .flow-branch {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            width: 100%;
+            position: relative;
+        }
+
+        .flow-branch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background: #667eea;
+        }
+
+        .flow-branch-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .branch-label {
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .branch-label.no {
+            background: #dc3545;
+        }
+
+        .cycle-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: #f0f4ff;
+            border-radius: 25px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .vital-chart {
+            overflow-x: auto;
+        }
+
+        .vital-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        .vital-table th,
+        .vital-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .vital-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .vital-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .vital-normal {
+            background: #d4edda !important;
+            color: #155724;
+        }
+
+        .vital-warning {
+            background: #fff3cd !important;
+            color: #856404;
+        }
+
+        .vital-danger {
+            background: #f8d7da !important;
+            color: #721c24;
+        }
+
+        @media (max-width: 600px) {
+            .flow-branch {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .flow-branch::before {
+                display: none;
+            }
+
+            .flow-box {
+                max-width: 100%;
+            }
+        }
+
+        body.dark-mode .algorithm-container {
+            background: #1e1e30;
+        }
+
+        body.dark-mode .flow-arrow {
+            color: #8b9dc3;
+        }
+
+        body.dark-mode .flow-arrow span {
+            color: #aaa;
+        }
+
+        body.dark-mode .cycle-indicator {
+            background: #252540;
+        }
+
+        body.dark-mode .vital-table td {
+            border-color: #3a3a50;
+            color: #ccc;
+        }
+
+        body.dark-mode .vital-table tr:nth-child(even) {
+            background: #252540;
+        }
+    </style>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 5/19/2022</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li><li><a href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li><li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a class="active" href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<!-- Adult Cardiac Arrest Algorithm -->
+<div class="algorithm-container">
+<h3 class="algorithm-title">🫀 Adult Cardiac Arrest Algorithm</h3>
+<div class="flowchart">
+<div class="flow-box start">Unresponsive Patient<br/>No pulse, Not breathing</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">Start CPR<br/>Attach AED/Monitor</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box decision">Shockable Rhythm?<br/>(VF/pVT)</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-branch">
+<div class="flow-branch-item">
+<div class="branch-label">YES</div>
+<div class="flow-box action red">SHOCK<br/>Max Joules</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">CPR 2 min</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action purple">Epinephrine 1mg<br/>every 3-5 min</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action purple">Amiodarone<br/>300mg, then 150mg</div>
+</div>
+<div class="flow-branch-item">
+<div class="branch-label no">NO (PEA/Asystole)</div>
+<div class="flow-box action green">CPR 2 min</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action purple">Epinephrine 1mg<br/>every 3-5 min</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">Treat Reversible<br/>Causes (H's &amp; T's)</div>
+</div>
+</div>
+<div class="flow-arrow" style="margin-top: 20px;">↓</div>
+<div class="cycle-indicator">🔄 Continue 2-min cycles • Check rhythm after each cycle</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box decision">Consider TOR if:<br/>4 cycles (8min) + EtCO2 &lt;10</div>
+</div>
+</div>
+<!-- Anaphylaxis Algorithm -->
+<div class="algorithm-container">
+<h3 class="algorithm-title">💉 Anaphylaxis Treatment Algorithm</h3>
+<div class="flowchart">
+<div class="flow-box start">Signs of Anaphylaxis<br/>Airway compromise, Hypotension, Urticaria
+                        </div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action red">EPINEPHRINE 1:1,000<br/>0.3-0.5mg IM (Anterolateral thigh)</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">High-flow O2<br/>IV Access</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box decision">Persistent Symptoms?</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-branch">
+<div class="flow-branch-item">
+<div class="branch-label">YES</div>
+<div class="flow-box action red">Repeat Epinephrine<br/>q5-15min PRN</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action purple">Add Diphenhydramine<br/>25-50mg IV/IM</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">Albuterol if<br/>bronchospasm</div>
+</div>
+<div class="flow-branch-item">
+<div class="branch-label no">NO / IMPROVED</div>
+<div class="flow-box action green">Monitor closely</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">Transport to ED</div>
+</div>
+</div>
+<div class="flow-arrow" style="margin-top: 20px;">↓</div>
+<div class="flow-box decision">Hypotension despite Epi?</div>
+<div class="flow-arrow"><span>Yes</span>↓</div>
+<div class="flow-box action">NS Bolus 1-2L<br/>Consider Epi drip</div>
+</div>
+</div>
+<!-- Pediatric Vital Signs Reference -->
+<div class="algorithm-container">
+<h3 class="algorithm-title">👶 Pediatric Vital Signs Quick Reference</h3>
+<div class="vital-chart">
+<table class="vital-table">
+<thead>
+<tr>
+<th>Age</th>
+<th>Weight (kg)</th>
+<th>Heart Rate</th>
+<th>Respiratory Rate</th>
+<th>Systolic BP</th>
+<th>ETT Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Newborn</strong></td>
+<td>3-4</td>
+<td class="vital-normal">100-160</td>
+<td class="vital-normal">30-60</td>
+<td>60-90</td>
+<td>3.0-3.5</td>
+</tr>
+<tr>
+<td><strong>Infant (6mo)</strong></td>
+<td>7-8</td>
+<td class="vital-normal">100-150</td>
+<td class="vital-normal">25-40</td>
+<td>70-100</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td><strong>1 year</strong></td>
+<td>10</td>
+<td class="vital-normal">100-140</td>
+<td class="vital-normal">20-30</td>
+<td>80-100</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td><strong>2 years</strong></td>
+<td>12-14</td>
+<td class="vital-normal">90-130</td>
+<td class="vital-normal">20-28</td>
+<td>80-110</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td><strong>4 years</strong></td>
+<td>16-18</td>
+<td class="vital-normal">80-120</td>
+<td class="vital-normal">18-25</td>
+<td>85-115</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td><strong>6 years</strong></td>
+<td>20-24</td>
+<td class="vital-normal">70-115</td>
+<td class="vital-normal">18-24</td>
+<td>90-115</td>
+<td>5.5</td>
+</tr>
+<tr>
+<td><strong>8 years</strong></td>
+<td>25-30</td>
+<td class="vital-normal">70-110</td>
+<td class="vital-normal">16-22</td>
+<td>90-120</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td><strong>10 years</strong></td>
+<td>30-40</td>
+<td class="vital-normal">65-105</td>
+<td class="vital-normal">16-20</td>
+<td>95-120</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td><strong>12+ years</strong></td>
+<td>40-50+</td>
+<td class="vital-normal">60-100</td>
+<td class="vital-normal">12-20</td>
+<td>100-130</td>
+<td>7.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="info-box" style="margin-top: 15px;">
+<strong>Key Formulas:</strong>
+<ul>
+<li><strong>Minimum SBP:</strong> 70 + (Age × 2) mmHg</li>
+<li><strong>ETT Size:</strong> (Age/4) + 4 (uncuffed) or (Age/4) + 3.5 (cuffed)</li>
+<li><strong>ETT Depth:</strong> ETT size × 3 (cm at lip)</li>
+<li><strong>Weight (1-10y):</strong> (Age × 2) + 8 kg</li>
+</ul>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

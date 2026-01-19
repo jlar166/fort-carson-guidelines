@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Behavioral Emergencies - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>Fort Carson Fire &amp; EMS</h1>
+<p class="subtitle">Prehospital Practice Guidelines</p>
+<p class="revision-date">Revised: 01/2026</p>
+<div class="header-controls">
+<button aria-label="Toggle Dark Mode" class="icon-btn" id="theme-toggle">
+<i class="fas fa-moon"></i>
+</button>
+<button aria-label="Print Page" class="icon-btn" id="print-btn">
+<i class="fas fa-print"></i>
+</button>
+</div>
+</header>
+<div class="search-container">
+<input class="search-box" id="search-input" placeholder="Search guidelines..." type="text"/>
+<div class="search-results" id="search-results"></div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li>
+<li><a href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+<li><a class="active" href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h2>Behavioral Emergencies</h2>
+<div class="guideline-section">
+<h4>Description</h4>
+<p>Behavioral/medical/traumatic emergencies can arise due to anxiety, mental illness, substance
+                            abuse or other medical conditions. Symptoms can range from mild to severe.</p>
+<ul>
+<li><strong>Mild (RASS 0 to -2):</strong> Behavior which includes irritability, verbal
+                                aggression, anxiety, and/or depression.</li>
+<!-- Corrected ranges based on Flowchart +2/+1 logic, but keeping Description text generally aligned -->
+<li><strong>Moderate (RASS +1 to +2):</strong> Increased restless/irritable behavior that
+                                escalates to verbal and/or physical aggression toward self or others.</li>
+<li><strong>Severe (RASS +3 to +4):</strong> Behavior which includes poor impulse control,
+                                aggressive excitement, non-purposeful movements, and/or unrelenting violent/disruptive
+                                behavior AND has the potential to require restraint.</li>
+</ul>
+</div>
+<div class="guideline-section">
+<h4>Improved Montgomery County Richmond Agitation Sedation Scale (IMC-RASS)</h4>
+<div class="destination-wrapper">
+<table class="destination-table" style="text-align: left;">
+<thead>
+<tr>
+<th style="width: 10%;">Score</th>
+<th style="width: 20%;">Term</th>
+<th>Description</th>
+<th>EMS Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="bg-red" data-label="Score" style="text-align: center;">+4</td>
+<td class="bg-red" data-label="Term">Combative</td>
+<td data-label="Description">Overtly combative, violent, immediate danger to
+                                            staff</td>
+<td class="bg-red" data-label="EMS Activity">Unsafe to care for patient without
+                                            maximal assistance, require law enforcement assistance</td>
+</tr>
+<tr>
+<td class="bg-red" data-label="Score" style="text-align: center;">+3</td>
+<td class="bg-red" data-label="Term">Very Agitated</td>
+<td data-label="Description">Pulls or removes tube(s) or catheter(s), aggressive
+                                        </td>
+<td class="bg-red" data-label="EMS Activity">Struggles aggressively and
+                                            forcefully against care. Routine EMS care impossible.</td>
+</tr>
+<tr>
+<td class="bg-orange" data-label="Score" style="text-align: center;">+2</td>
+<td class="bg-orange" data-label="Term">Agitated</td>
+<td data-label="Description">Frequent non-purposeful movement, fights
+                                            interventions</td>
+<td class="bg-orange" data-label="EMS Activity">Resists EMS care, requires
+                                            gentle physical redirection to allow for routine EMS care</td>
+</tr>
+<tr>
+<td class="bg-orange" data-label="Score" style="text-align: center;">+1</td>
+<td class="bg-orange" data-label="Term">Restless</td>
+<td data-label="Description">Anxious, but movements are not aggressive or
+                                            vigorous</td>
+<td class="bg-orange" data-label="EMS Activity">Verbally redirectable, follows
+                                            commands, routine EMS care possible</td>
+</tr>
+<tr>
+<td class="bg-yellow" data-label="Score" style="text-align: center;">0</td>
+<td class="bg-yellow" data-label="Term">Alert and Calm</td>
+<td data-label="Description">Calm behavior</td>
+<td class="bg-yellow" data-label="EMS Activity"> </td>
+</tr>
+<tr>
+<td class="bg-yellow" data-label="Score" style="text-align: center;">-1</td>
+<td class="bg-yellow" data-label="Term">Drowsy</td>
+<td data-label="Description">Not fully alert but has sustained awakening and eye
+                                            contact to voice (&gt;10 seconds)</td>
+<td class="bg-yellow" data-label="EMS Activity">Awakens to voice</td>
+</tr>
+<tr>
+<td class="bg-yellow" data-label="Score" style="text-align: center;">-2</td>
+<td class="bg-yellow" data-label="Term">Light Sedation</td>
+<td data-label="Description">Briefly awakens to voice (&lt;10 seconds)</td>
+<td class="bg-yellow" data-label="EMS Activity">Awakens to bumps/potholes in
+                                            roadway during transport or application of oxygen</td>
+</tr>
+<tr>
+<td class="bg-dark-green" data-label="Score" style="text-align: center;">-3</td>
+<td class="bg-dark-green" data-label="Term">Moderate Sedation</td>
+<td data-label="Description">Movement or eye opening to voice (no eye contact)
+                                        </td>
+<td class="bg-dark-green" data-label="EMS Activity">Eyes open to physical exam,
+                                            venous tourniquet application and/or BP cuff</td>
+</tr>
+<tr>
+<td class="bg-dark-green" data-label="Score" style="text-align: center;">-4</td>
+<td class="bg-dark-green" data-label="Term">Deep Sedation</td>
+<td data-label="Description">No response to voice, but movement or eye contact
+                                            to physical stimulation</td>
+<td class="bg-dark-green" data-label="EMS Activity">Responds to insertion of NPA
+                                            or IV start</td>
+</tr>
+<tr>
+<td class="bg-blue" data-label="Score" style="text-align: center;">-5</td>
+<td class="bg-blue" data-label="Term">Unarousable</td>
+<td data-label="Description">No response to voice or physical stimulation</td>
+<td class="bg-blue" data-label="EMS Activity">No response to insertion of
+                                            OPA/NPA or IV start</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="guideline-section">
+<h4>Indication for Restraint</h4>
+<p>Use restraints <strong>ONLY</strong> if attempts at verbal de-escalation are unsuccessful and
+                            when a justifiable behavioral/medical/traumatic emergency is present. This is defined as an
+                            underlying behavioral/medical/traumatic condition posing an immediate safety risk to the
+                            individual, EMS provider, and/or the public.</p>
+<ul>
+<li>If restraining a patient will place EMS/Fire personnel in harm's way, providers are
+                                allowed to disengage the restraint process.</li>
+</ul>
+<h4>Restraint Considerations</h4>
+<ol type="a">
+<li><strong>AVOID PRONE POSITIONING</strong>; transition the patient from the prone position
+                                as soon as possible.</li>
+<li>A restrained patient may never be left unattended.</li>
+<li>Continuously monitor vital signs and airway to prevent injury, aspiration, or harm.</li>
+<li>Peace officers shall not use, direct, or unduly influence EMS providers with regards to
+                                medical care.</li>
+<li>Thoroughly document restraint rationale and type utilized, re-evaluations, all persons
+                                involved including peace officer, any injury to the patient or provider, as well as
+                                patient condition upon hospital transfer of care.</li>
+<li>If handcuffs are placed by a peace officer, the officer <strong>MUST</strong> accompany
+                                EMS during transport in the ambulance or the patient must be transitioned to soft
+                                restraints prior to leaving the scene.</li>
+<li>Be aware of potential complications from preexisting medical conditions with the
+                                application of restraints such as obesity, ACS, diabetes etc.</li>
+</ol>
+</div>
+<div class="guideline-section">
+<h4>Treatment Algorithm</h4>
+<!-- Scene Assessment -->
+<div class="protocol-box" style="margin-bottom: 20px;">
+<h5>Scene Assessment</h5>
+<strong>EMS Provider(s) in harm's way?</strong>
+<div class="protocol-split" style="margin-top: 10px;">
+<div class="protocol-col bg-red" style="color: white; padding: 10px; border-radius: 5px;">
+<strong>YES</strong><br/>
+                                    Disengage Patient Contact
+                                </div>
+<div class="protocol-col bg-red" style="color: white; padding: 10px; border-radius: 5px;">
+<strong>NO</strong><br/>
+                                    Initial assessment<br/>
+                                    Acquire VS (if possible)<br/>
+                                    Attempt de-escalation<br/>
+                                    Respect personal space
+                                </div>
+</div>
+</div>
+<!-- Suspected Cause -->
+<div class="protocol-box" style="margin-bottom: 20px;">
+<h5>Suspected Cause</h5>
+<div class="protocol-split" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+<div class="protocol-col">
+<strong>Behavioral Emergency</strong><br/>
+                                    Anxiety/Psych: See below<br/>
+                                    Suicidal: Use the Assessment Tool
+                                </div>
+<div class="protocol-col">
+<strong>Medical Emergency</strong><br/>
+                                    Trauma, Endocrine, Infection, and/or Hypoxia<br/>
+<em>Treat per Specific Guideline</em>
+</div>
+</div>
+</div>
+<!-- Suicidal Ideation Assessment Tool -->
+<div class="destination-wrapper">
+<table class="destination-table">
+<thead>
+<tr>
+<th colspan="2" style="background-color: black; color: white; text-align: center;">Suicidal
+                                            Ideation Assessment Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-green">
+<td data-label="Score" style="width: 30px; text-align: center;">1</td>
+<td data-label="Criteria">Wish to be dead, nonspecific active suicidal thoughts
+                                            without a plan or intent to act</td>
+</tr>
+<tr class="bg-red">
+<td data-label="Score" style="width: 30px; text-align: center;">2</td>
+<td data-label="Criteria">Active suicidal ideation with specific plan and intent
+                                        </td>
+</tr>
+<tr class="bg-red">
+<td data-label="Score" style="width: 30px; text-align: center;">3</td>
+<td data-label="Criteria">Preparatory acts (plan, telling friends, writing
+                                            letters, giving away belongings etc.)</td>
+</tr>
+<tr class="bg-red">
+<td data-label="Score" style="width: 30px; text-align: center;">4</td>
+<td data-label="Criteria">Actual, aborted or interrupted attempt</td>
+</tr>
+<tr>
+<td colspan="2" style="padding: 0 !important;">
+<div style="display: flex; width: 100%;">
+<div class="bg-green" style="flex: 1; padding: 10px; text-align: center;">
+<strong>Lower Risk</strong><br/>
+                                                    May contact Medical Control for guidance if refusal is considered
+                                                    (see REFUSAL)
+                                                </div>
+<div class="bg-red" style="flex: 1; padding: 10px; text-align: center;">
+<strong>Higher Risk</strong><br/>
+                                                    High consideration for transport
+                                                </div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Clinical Assessment & Sedation -->
+<div class="protocol-box" style="margin-top: 20px;">
+<h5>Select Medication Based on Clinical Assessment</h5>
+<div class="destination-wrapper">
+<table class="destination-table">
+<tbody>
+<tr>
+<td data-label="Medication" style="vertical-align: top;">
+<strong>Substance Induced Agitation:</strong> Benzodiazepines
+                                                preferred<br/>
+<strong>Psychiatric Induced Agitation:</strong> Droperidol preferred
+                                                <hr/>
+<strong>MIDAZOLAM:</strong> PRN every 10 minutes<br/>
+                                                • <span style="color: #d35400; font-weight: bold;">ADULT:</span> Up to 5
+                                                mg IV/IO/IN/IM; MAX 10 mg<br/>
+                                                • <span style="color: #8e44ad; font-weight: bold;">PEDIATRIC:</span> 0.1
+                                                mg/kg IV/IO/IN/IM; MAX 10 mg (MAX single dose 5 mg)<br/>
+                                                OR<br/>
+<strong>ATIVAN:</strong> PRN every 10 minutes<br/>
+                                                • <span style="color: #d35400; font-weight: bold;">ADULT:</span> 2 mg
+                                                IV/IO/deep IM; May repeat X 1<br/>
+                                                • <span style="color: #8e44ad; font-weight: bold;">PEDIATRIC:</span> Up
+                                                to 0.1 mg/kg IV/IO/deep IM (MAX single dose 2 mg)<br/>
+                                                OR<br/>
+<strong>DROPERIDOL:</strong> PRN every 10 mins, MAX total 20 mg<br/>
+                                                • <span style="color: #d35400; font-weight: bold;">ADULT ≥ 13:</span> 5
+                                                mg IV/IO or 10 mg IM<br/>
+                                                • <span style="color: #8e44ad; font-weight: bold;">PEDIATRIC &lt;13:&lt;
+                                                    /span&gt; NOT ALLOWED
+                                                </span>
+</td>
+<!-- Severity Columns -->
+<td class="bg-yellow" data-label="Severity" style="text-align: center; vertical-align: middle; width: 15%; color: black;">
+<h3>MILD</h3>
+                                                (0 to -2)
+                                            </td>
+<td class="bg-orange" data-label="Severity" style="text-align: center; vertical-align: middle; width: 15%;">
+<h3>MODERATE</h3>
+                                                (+1 to +2)
+                                            </td>
+<td class="bg-red" data-label="Severity" style="text-align: center; vertical-align: middle; width: 15%;">
+<h3>SEVERE</h3>
+                                                (+3 to +4)
+                                            </td>
+<!-- Post Sedation -->
+<td data-label="Action" style="vertical-align: top;">
+<strong>Post Sedation Resuscitation &amp; Monitoring</strong>
+<ul>
+<li>Maintain patent airway and OXYGENATION</li>
+<li>Early 12-lead EKG if clinically indicated</li>
+<li>Monitor VS closely (EtCO2, RR, O2 Sat)</li>
+<li>If hyperthermia suspected, see HEAT RELATED</li>
+</ul>
+<div class="bg-white" style="border: 2px solid red; padding: 10px; margin-top: 10px; text-align: center; font-weight: bold; color: black;">
+                                                    Establish Vascular Access<br/>(consider fluid bolus)
+                                                </div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="text-align: center; margin-top: 20px;">
+<div style="background: white; border: 2px solid black; padding: 10px; display: inline-block;">
+                                    Apply physical Restraints, if indicated<br/>
+                                    Reassess motor, sensory, and circulation status
+                                </div>
+<br/>
+<i class="fas fa-arrow-down" style="font-size: 24px; margin: 10px 0;"></i>
+<br/>
+<div style="background: white; border: 2px solid black; padding: 10px; display: inline-block;">
+                                    If physical restraints are ineffective to allow medical care, reassess the need for
+                                    chemical intervention
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

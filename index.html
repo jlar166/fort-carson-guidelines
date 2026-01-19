@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fort Carson Fire &amp; EMS - Prehospital Practice Guidelines</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 5/19/2022</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="search-wrapper">
+<div class="search-container">
+<input class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures..." type="text"/>
+<div id="searchResults"></div>
+</div>
+</div>
+<!-- Quick Access Buttons -->
+<div class="quick-access">
+<a class="quick-btn emergency" href="pages/cardiac.html">
+<span class="icon">🫀</span>
+<span class="label">Cardiac Arrest</span>
+</a>
+<a class="quick-btn emergency" href="pages/allergic.html">
+<span class="icon">💉</span>
+<span class="label">Anaphylaxis</span>
+</a>
+<a class="quick-btn warning" href="pages/stroke.html">
+<span class="icon">🧠</span>
+<span class="label">Stroke</span>
+</a>
+<a class="quick-btn info" href="pages/pediatric.html">
+<span class="icon">👶</span>
+<span class="label">Pediatric</span>
+</a>
+<a class="quick-btn success" href="pages/calculator.html">
+<span class="icon">🧮</span>
+<span class="label">Dose Calculator</span>
+</a>
+<a class="quick-btn success" href="pages/med-list.html">
+<span class="icon">💊</span>
+<span class="label">Medications</span>
+</a>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<!-- Recent Pages -->
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="pages/destination.html">Destination Guidelines</a></li>
+<li><a class="active" href="index.html">Introduction</a></li>
+<li><a href="pages/patient-determination.html">Patient Determination</a></li>
+<li><a href="pages/consent.html">Consent</a></li>
+<li><a href="pages/supportive-care.html">General Supportive Care</a></li>
+<li><a href="pages/pediatric.html">Pediatric Overview</a></li>
+<li><a href="pages/waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="pages/airway.html">Airway Management</a></li>
+<li><a href="pages/maam.html">MAAM</a></li>
+<li><a href="pages/pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="pages/respiratory.html">Respiratory</a></li>
+<li><a href="pages/cardiac.html">Cardiac</a></li>
+<li><a href="pages/stroke.html">CVA/Stroke</a></li>
+<li><a href="pages/seizure.html">Seizures</a></li>
+<li><a href="pages/diabetes.html">Diabetic Emergency</a></li>
+<li><a href="pages/allergic.html">Allergy/Anaphylaxis</a></li>
+<li><a href="pages/behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="pages/trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="pages/hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="pages/burns.html">Burn Injuries</a></li>
+<li><a href="pages/extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="pages/medications.html">Medication Overview</a></li>
+<li><a href="pages/med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="pages/calculator.html">Pediatric Calculator</a></li>
+<li><a href="pages/quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="pages/algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<!-- Introduction Section -->
+<div class="guideline-card">
+<h3>Introduction</h3>
+<div class="guideline-section">
+<p>The following guidelines have been developed and approved by the FCFD and EACH EMS in
+                            conjunction with a working group representing FCFD, EACH EMS, AMR, CSFD, SCRETAC, SECRETAC
+                            and P2PRETAC.</p>
+<div class="info-box">
+<strong>Purpose:</strong> These guidelines delineate the expected standard of care and acts
+                            allowed for EMT, EMT-IV and paramedic providers under local medical direction.
+                        </div>
+<h4>Key Principles</h4>
+<ul>
+<li>Guidelines are evidence-based where possible</li>
+<li>Reviewed on a six-month basis</li>
+<li>No substitute for sound clinical judgment</li>
+<li>Contact medical control when situations arise outside guidelines</li>
+</ul>
+<h4>Guideline Format</h4>
+<p>The electronic format includes hyperlinks for quick navigation between related guidelines,
+                            procedures, and medications.</p>
+<h4>New Features</h4>
+<ul>
+<li>🔍 <strong>Search</strong> - Find any guideline, medication, or procedure instantly</li>
+<li>🧮 <strong>Pediatric Calculator</strong> - Weight-based dosing for all medications</li>
+<li>🌙 <strong>Dark Mode</strong> - Easier viewing during night shifts</li>
+<li>📱 <strong>Offline Mode</strong> - Works without internet connection</li>
+<li>🖨️ <strong>Print</strong> - Print-friendly protocols</li>
+</ul>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

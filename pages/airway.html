@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Airway Management - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 5/11/2022</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="search-wrapper">
+<div class="search-container">
+<input class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures..." type="text"/>
+<div id="searchResults"></div>
+</div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a class="active" href="airway.html">Airway Management</a></li>
+<li><a href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+<li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h3>Airway Management (B002)</h3>
+<div class="guideline-section">
+<h4>Definition</h4>
+<p>The goal of airway management is to ensure patients receive adequate ventilation and
+                            oxygenation. This can be accomplished through various techniques including basic
+                            positioning, adjuncts, and advanced level airways.</p>
+<ul>
+<li>Assessment is crucial to success helping to identify complications before they arise.
+                            </li>
+<li>A difficult airway is in which a conventionally trained provider experiences difficulty
+                                with maintaining adequate ventilation and oxygenation.</li>
+<li><strong>Successful airway management</strong> is defined as placement of an ETT OR the
+                                ability to effectively oxygenate/ventilate.</li>
+</ul>
+<h4>Description</h4>
+<ol type="a">
+<li>Guideline modified to achieve highest EMS provider safety during infectious disease
+                                crisis (e.g., COVID-19).</li>
+<li>All airway management performed with EMS provider in recommended PPE.</li>
+<li>All attempts should be made to optimize oxygenation/ventilation prior to advanced airway
+                                placement.</li>
+<li>Advanced airway placement in conjunction with continuous waveform EtCO2 and pulse ox.
+                            </li>
+<li>Ensure perfusion status prior to advanced airway (BP &gt; 90, EtCO2 &gt; 30, MAP &gt;
+                                60).
+                                <ul>
+<li>Administer early <a href="#">FLUID THERAPY</a></li>
+<li>Consider <a href="#">EPINEPHRINE INFUSION</a> for inadequate perfusion</li>
+</ul>
+</li>
+<li style="font-weight:bold; color:red; border: 2px solid red; padding:5px; display:inline-block;">
+                                NO MORE THAN (3) ETT TOTAL ATTEMPTS PER PATIENT</li>
+<li>Oxygen administration at 8 L via nasal cannula during ETT attempt.</li>
+<li>Consider cricothyrotomy where effective oxygenation/ventilation cannot be provided.</li>
+</ol>
+</div>
+<div class="guideline-section">
+<div class="flowchart">
+<div class="flow-box start">
+                                Medical Direction Identified Infectious Disease Timeframe <br/>
+                                OR Concern for Infectious Etiology
+                            </div>
+</div>
+<div class="protocol-split">
+<!-- Left: YES (Infectious) -->
+<div class="protocol-col">
+<div class="protocol-header bg-green">YES</div>
+<div class="protocol-body">
+<div class="flowchart">
+<div class="flow-box action" style="border-width:2px; text-align:left;">
+<strong>Don Proper Required PPE</strong>
+<ul style="margin:5px 0 0 20px; font-size:0.9em;">
+<li>Eye protection</li>
+<li>N95</li>
+<li>Gown</li>
+</ul>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">Apply Barrier Device (BD) Over Patients Face</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">PPV with Airway Adjunct</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box decision">Gag Reflex?</div>
+<!-- Mini branch for Gag Reflex -->
+<div style="display:flex; justify-content:space-between; width:100%; margin:10px 0;">
+<div style="width:45%; text-align:center;">
+<div class="flow-arrow">YES ↙</div>
+<div class="flow-box action" style="border: 2px solid #8B4513; color:#8B4513;">
+<a href="maam.html" style="color: inherit; text-decoration: underline;">Consider
+                                                        MAAM</a>
+</div>
+</div>
+<div style="width:45%; text-align:center;">
+<div class="flow-arrow">NO ↘</div>
+</div>
+</div>
+<div class="flow-box action" style="background:#000; color:#fff;">
+<strong>Insert Advanced Airway (order of preference)</strong>
+<ul style="text-align:left; margin-left:15px; font-size:0.9em;">
+<li>iGel with viral filter</li>
+<li>iGel with BD</li>
+<li>VL ETT with viral filter</li>
+<li>VL ETT with BD</li>
+<li>VL intubation</li>
+<li>iGel</li>
+</ul>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box decision">Successful Insertion?</div>
+<div style="display:flex; justify-content:space-around; width:100%; margin-top:10px;">
+<div style="width:45%;">
+<div style="text-align:center; color:red; font-weight:bold;">NO</div>
+<div class="flow-box action" style="border-color:#0056b3; color:#0056b3;">Consider CRICOTHYROTOMY
+                                                    if unable to oxygenate</div>
+</div>
+<div style="width:45%;">
+<div style="text-align:center; color:green; font-weight:bold;">YES</div>
+<div class="flow-box action" style="border-color:#0056b3; color:#0056b3;">Consider post procedure
+                                                    SEDATION if gag reflex returns</div>
+</div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">General Supportive Care</div>
+</div>
+</div>
+</div>
+<!-- Right: NO (Non-Infectious) -->
+<div class="protocol-col">
+<div class="protocol-header bg-red">NO</div>
+<div class="protocol-body">
+<div class="flowchart">
+<div class="flow-box action" style="border-width:2px; text-align:left;">
+<strong>Don Standard PPE</strong>
+<ul style="margin:5px 0 0 20px; font-size:0.9em;">
+<li>Eye protection</li>
+<li>Surgical mask</li>
+</ul>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">PPV with Airway Adjunct</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box decision">Gag Reflex?</div>
+<!-- Mini branch -->
+<div style="display:flex; justify-content:space-between; width:100%; margin:10px 0;">
+<div style="width:45%; text-align:center;">
+<div class="flow-arrow">YES ↙</div>
+<div class="flow-box action" style="border: 2px solid #8B4513; color:#8B4513;">
+<a href="maam.html" style="color: inherit; text-decoration: underline;">Consider
+                                                        MAAM</a>
+</div>
+</div>
+<div style="width:45%; text-align:center;">
+<div class="flow-arrow">NO ↘</div>
+</div>
+</div>
+<div class="flow-box action" style="background:#000; color:#fff;">
+<strong>Insert Advanced Airway</strong>
+<div style="font-size:0.9em;">iGel or VL ETT &gt; DL ETT</div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box decision">Successful Insertion?</div>
+<div style="display:flex; justify-content:space-around; width:100%; margin-top:10px;">
+<div style="width:45%;">
+<div style="text-align:center; color:red; font-weight:bold;">NO</div>
+<div class="flow-box action" style="border-color:#0056b3; color:#0056b3;">Consider CRICOTHYROTOMY
+                                                    if unable to oxygenate</div>
+</div>
+<div style="width:45%;">
+<div style="text-align:center; color:green; font-weight:bold;">YES</div>
+<div class="flow-box action" style="border-color:#0056b3; color:#0056b3;">Consider post procedure
+                                                    SEDATION if gag reflex returns</div>
+</div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box action">General Supportive Care</div>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align: right; margin-top: 20px;">
+<span class="badge" style="background: white; color: black; border: 1px solid #333;">EMT</span>
+<span class="badge badge-emt">EMT-IV</span>
+<span class="badge badge-paramedic">Paramedic</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

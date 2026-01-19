@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Overview - Fort Carson EMS Guidelines</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="manifest" href="../manifest.json">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="../assets/images/header_banner.png" alt="Fort Carson Mountain Post"
+                style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h1>🚑 Fort Carson Fire and EMS</h1>
+            <p class="subtitle">Prehospital Practice Guidelines</p>
+            <p class="revision-date">Revised: 01/2026</p>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="print-btn" class="icon-btn" aria-label="Print Page">
+                    <i class="fas fa-print"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-box" placeholder="Search guidelines...">
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Navigation</h2>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Menu</span>
+                </button>
+                <div class="nav-content" id="navContent">
+                    <div class="recent-section" id="recentPages" style="display:none;">
+                        <h4>📍 Recent</h4>
+                        <ul class="recent-list"></ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>General</h3>
+                        <ul class="nav-list">
+                            <li><a href="destination.html">Destination Guidelines</a></li>
+                            <li><a href="../index.html">Introduction</a></li>
+                            <li><a href="patient-determination.html">Patient Determination</a></li>
+                            <li><a href="consent.html">Consent</a></li>
+                            <li><a href="supportive-care.html">General Supportive Care</a></li>
+                            <li><a href="pediatric.html">Pediatric Overview</a></li>
+                            <li><a href="waivers.html">Waivers</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Procedures</h3>
+                        <ul class="nav-list">
+                            <li><a href="airway.html">Airway Management</a></li>
+                            <li><a href="maam.html">MAAM</a></li>
+                            <li><a href="pain.html">Pain Management</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Medical Emergencies</h3>
+                        <ul class="nav-list">
+                            <li><a href="respiratory.html">Respiratory</a></li>
+                            <li><a href="cardiac.html">Cardiac</a></li>
+                            <li><a href="stroke.html">CVA/Stroke</a></li>
+                            <li><a href="seizure.html">Seizures</a></li>
+                            <li><a href="diabetes.html">Diabetic Emergency</a></li>
+                            <li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+                            <li><a href="behavioral.html">Behavioral Emergencies</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Trauma</h3>
+                        <ul class="nav-list">
+                            <li><a href="trauma-general.html">Standard Trauma Care</a></li>
+                            <li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+                            <li><a href="burns.html">Burn Injuries</a></li>
+                            <li><a href="extremity.html">Extremity Injuries</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Medications</h3>
+                        <ul class="nav-list">
+                            <li><a href="medications.html" class="active">Medication Overview</a></li>
+                            <li><a href="med-list.html">Medication List</a></li>
+                            <li><a href="med-description.html">Medication Details</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Tools</h3>
+                        <ul class="nav-list">
+                            <li><a href="calculator.html">Pediatric Calculator</a></li>
+                            <li><a href="quick-cards.html">Drug Quick Cards</a></li>
+                            <li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="guideline-card">
+                    <h2>Medication Overview</h2>
+
+                    <div class="guideline-section">
+                        <h4>Description</h4>
+                        <ol type="a">
+                            <li>This guideline is designed to assist prehospital providers in the principles of
+                                administration, delivery, and safety of approved medications.</li>
+                            <li>All care, in regard to the administration of medications, assessment, and performance of
+                                procedures, shall be provided in accordance with the practitioner's scope of practice,
+                                defined by the most recent version of the <em>COLORADO DEPARTMENT OF PUBLIC HEALTH AND
+                                    ENVIRONMENT 6CCR1015-3, CHAPTER 2</em>.
+                                <ul>
+                                    <li>As such, specific care guidelines will <strong>NOT</strong> be delineated within
+                                        these guidelines, <strong>EXCEPT</strong> to denote restrictions on the scope of
+                                        practice.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h4>Special Considerations</h4>
+                        <ol type="a">
+                            <li>The appropriate process for safe medication administration includes:
+                                <ul>
+                                    <li>Closed loop communication</li>
+                                    <li>Cross-check with another prehospital provider to verify appropriateness of
+                                        medication including routes</li>
+                                </ul>
+                            </li>
+                            <li>For pediatrics, reference Pediatric Field Guide or approved apps</li>
+                            <li>There are several types of errors that can occur when administering medications and can
+                                relate to the prehospital providers knowledge of misuse, underuse, and overuse. EMS
+                                agencies should work to establish a system of Just Culture; this is an approach to work
+                                place safety that assumes humans, despite their best intentions to do the right thing,
+                                will make mistakes. This ideology, combined with a robust quality improvement program
+                                that promotes accurate, honest reporting, can limit mistakes.
+                                <ul>
+                                    <li>A report of a medication error will be reviewed through the QA/CQI process and
+                                        should be treated with respect and focus on identifying a root cause.</li>
+                                    <li>Self-reporting medication and/or procedure errors is critical to the improvement
+                                        of the system. It is <strong>NOT</strong> used as a pathway to punitive
+                                        measures, unless a pattern develops. But rather helps identify potential system
+                                        improvements and is highly encouraged.</li>
+                                </ul>
+                            </li>
+                            <li>Medications that are on back order or considered to be on a "shortage" will be dealt
+                                with on a case by case basis, including potential alternatives and/or use of the
+                                particular medication past its expiration date.</li>
+                            <li>At any time the prehospital provider can lower the recommended dose of any medication as
+                                long as it is justified in the patient care report.
+                                <ul>
+                                    <li>Potential reasons include but are not limited to liver or kidney failure, age,
+                                        weight, and/or potential interactions with other medications.</li>
+                                </ul>
+                            </li>
+                            <li>An EMT-IV may, under the supervision and authorization of the medical director,
+                                administer medications and classes of medications which exceed those listed in
+                                Appendices B and D of these rules for an EMT-IV under the <strong>DIRECT VISUAL
+                                    SUPERVISION</strong> of a paramedic <strong>WHEN</strong> the following conditions
+                                have been established:
+                                <ul>
+                                    <li>The patient <strong>MUST</strong> be in cardiac arrest or in extremis (defined
+                                        as at the point of death)</li>
+                                    <li>At no time can the EMT administer controlled substances, even if delegated by
+                                        the Paramedic</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="guideline-section">
+                        <h4>Routes of Administration</h4>
+                        <div class="destination-wrapper">
+                            <table class="destination-table" style="text-align: center;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Routes of Administration</th>
+                                        <th>EMT</th>
+                                        <th class="bg-red" style="color: white;">EMT-IV</th>
+                                        <th class="bg-blue" style="color: white;">Paramedic</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Aerosolized</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Atomized</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Auto-Injector</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Buccal</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Extra-abdominal umbilical vein
+                                        </td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Intradermal</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Intramuscular (IM)</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Intranasal (IN)</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Intraosseous (IO)</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Intravenous (IV) Piggyback</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Intravenous (IV) push</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Nasogastric</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Nebulized</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Ophthalmic</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Oral (PO)</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Rectal (PR)</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Subcutaneous (SC)</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Sublingual</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Topical</td>
+                                        <td data-label="EMT">YES</td>
+                                        <td class="bg-red" data-label="EMT-IV">YES</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Route">Use of mechanical infusion
+                                            pumps</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-red" data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" data-label="Paramedic">YES</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="guideline-section">
+                        <h4>FDA Pregnancy Drug Classes</h4>
+                        <div class="destination-wrapper">
+                            <table class="destination-table">
+                                <thead>
+                                    <tr>
+                                        <th class="bg-orange" style="color: black;">CLASS</th>
+                                        <th class="bg-orange" style="color: black;">DESCRIPTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="bg-orange" style="font-weight: bold;" data-label="Class">Category A
+                                        </td>
+                                        <td data-label="Description">Adequate and well-controlled studies have failed to
+                                            demonstrate a risk to the fetus in the first trimester of pregnancy (and
+                                            there is no evidence of risk in later trimesters).</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-orange" style="font-weight: bold;" data-label="Class">Category B
+                                        </td>
+                                        <td data-label="Description">Animal reproduction studies have failed to
+                                            demonstrate a risk to the fetus and there are no adequate and
+                                            well-controlled studies in pregnant women.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-orange" style="font-weight: bold;" data-label="Class">Category C
+                                        </td>
+                                        <td data-label="Description">Animal reproduction studies have shown an adverse
+                                            effect on the fetus and there are no adequate and well-controlled studies in
+                                            humans, but potential benefits may warrant use of the drug in pregnant women
+                                            despite potential risks</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-orange" style="font-weight: bold;" data-label="Class">Category D
+                                        </td>
+                                        <td data-label="Description">There is positive evidence of human fetal risk
+                                            based on adverse reaction data from investigational or marketing experience
+                                            or studies in humans, but potential benefits may warrant use of the drug in
+                                            pregnant women despite potential risks.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-orange" style="font-weight: bold;" data-label="Class">Category X
+                                        </td>
+                                        <td data-label="Description">Studies in animals or humans have demonstrated
+                                            fetal abnormalities and/or there is positive evidence of human fetal risk
+                                            based on adverse reaction data from investigational or marketing experience,
+                                            and the risks involved in use of the drug in pregnant women clearly outweigh
+                                            potential benefit</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../app.js"></script>
+</body>
+
+</html>

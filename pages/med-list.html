@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication List - Fort Carson EMS Guidelines</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="manifest" href="../manifest.json">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="../assets/images/header_banner.png" alt="Fort Carson Mountain Post"
+                style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <h1>🚑 Fort Carson Fire and EMS</h1>
+            <p class="subtitle">Prehospital Practice Guidelines</p>
+            <p class="revision-date">Revised: 01/2026</p>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="print-btn" class="icon-btn" aria-label="Print Page">
+                    <i class="fas fa-print"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-box"
+                placeholder="Search guidelines, medications, procedures..." type="text">
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Navigation</h2>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Menu</span>
+                </button>
+                <div class="nav-content" id="navContent">
+                    <div class="recent-section" id="recentPages" style="display:none;">
+                        <h4>📍 Recent</h4>
+                        <ul class="recent-list"></ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>General</h3>
+                        <ul class="nav-list">
+                            <li><a href="destination.html">Destination Guidelines</a></li>
+                            <li><a href="../index.html">Introduction</a></li>
+                            <li><a href="patient-determination.html">Patient Determination</a></li>
+                            <li><a href="consent.html">Consent</a></li>
+                            <li><a href="supportive-care.html">General Supportive Care</a></li>
+                            <li><a href="pediatric.html">Pediatric Overview</a></li>
+                            <li><a href="waivers.html">Waivers</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Procedures</h3>
+                        <ul class="nav-list">
+                            <li><a href="airway.html">Airway Management</a></li>
+                            <li><a href="maam.html">MAAM</a></li>
+                            <li><a href="pain.html">Pain Management</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Medical Emergencies</h3>
+                        <ul class="nav-list">
+                            <li><a href="respiratory.html">Respiratory</a></li>
+                            <li><a href="cardiac.html">Cardiac</a></li>
+                            <li><a href="stroke.html">CVA/Stroke</a></li>
+                            <li><a href="seizure.html">Seizures</a></li>
+                            <li><a href="diabetes.html">Diabetic Emergency</a></li>
+                            <li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+                            <li><a href="behavioral.html">Behavioral Emergencies</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Trauma</h3>
+                        <ul class="nav-list">
+                            <li><a href="trauma-general.html">Standard Trauma Care</a></li>
+                            <li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+                            <li><a href="burns.html">Burn Injuries</a></li>
+                            <li><a href="extremity.html">Extremity Injuries</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Medications</h3>
+                        <ul class="nav-list">
+                            <li><a href="medications.html">Medication Overview</a></li>
+                            <li><a href="med-list.html" class="active">Medication List</a></li>
+                            <li><a href="med-description.html">Medication Details</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-section">
+                        <h3>Tools</h3>
+                        <ul class="nav-list">
+                            <li><a href="calculator.html">Pediatric Calculator</a></li>
+                            <li><a href="quick-cards.html">Drug Quick Cards</a></li>
+                            <li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="guideline-card">
+                    <h3>Approved Medications and Routes</h3>
+                    <div class="guideline-section">
+                        <h4>Medications by Provider Level</h4>
+                        <div class="info-box">
+                            <p><strong>Legend:</strong></p>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>SO:</strong> Standing Order (Allowed without prior contact)</li>
+                                <li><strong>VO:</strong> Verbal Order (Requires online medical control/base contact)
+                                </li>
+                                <li><strong>NO:</strong> Not Ordered / Not Allowed</li>
+                            </ul>
+                        </div>
+                        <div class="destination-wrapper">
+                            <table class="destination-table" style="text-align: center;">
+                                <thead>
+                                    <tr>
+                                        <th style="background-color: black; color: white; text-align: left;">Medications
+                                        </th>
+                                        <th style="background-color: black; color: white;">EMT</th>
+                                        <th style="background-color: #c0392b; color: white;">EMT-IV</th>
+                                        <th style="background-color: #2980b9; color: white;">Paramedic</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#acetaminophen">Acetaminophen (IV)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#adenosine">Adenosine</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#albuterol">Albuterol</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#amiodarone">Amiodarone</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#aspirin">Aspirin</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#atropine">Atropine</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication">Atrovent</td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#calcium">Calcium</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#dexamethasone">Dexamethasone (Decadron)</a>
+                                        </td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#dextrose">Dextrose</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#diazepam">Diazepam (Valium)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#diltiazem">Diltiazem (Cardizem)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#diphenhydramine">Diphenhydramine
+                                                (Benadryl)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#droperidol">Droperidol</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#epinephrine">Epinephrine 1:1,000 IM</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#epinephrine">Epinephrine IV ONLY</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#epinephrine">Epinephrine Auto Injector</a>
+                                        </td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#fentanyl">Fentanyl</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#glucagon">Glucagon</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#honey">Honey</a>
+                                        </td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#hydromorphone">Hydromorphone (Dilaudid)</a>
+                                        </td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#hydroxycobalamin">Hydroxycobalamin
+                                                (Cyanokit)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#ipratropium">Ipratropium Bromide
+                                                (Atrovent)</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#iv-solutions">IV
+                                                Solutions</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#ketamine">Ketamine
+                                                (Ketalar)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#lidocaine">Lidocaine
+                                                (Xylocaine)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#lorazepam">Lorazepam
+                                                (Ativan)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#magnesium-sulfate">Magnesium Sulfate</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#metoprolol">Metoprolol</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#midazolam">Midazolam (Versed)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#naloxone">Naloxone
+                                                (Narcan) IN</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#naloxone">Naloxone
+                                                (Narcan) injection</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#phenylephrine">Neo synephrine</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#nitroglycerin">Nitroglycerin (patient
+                                                assisted)</a></td>
+                                        <td style="font-weight:bold;" data-label="EMT">VO</td>
+                                        <td style="font-weight:bold;" data-label="EMT-IV">VO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#ondansetron">Ondansetron (Zofran) ODT</a>
+                                        </td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#ondansetron">Ondansetron (Zofran) IV</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#oral-glucose">Oral
+                                                Glucose</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#oxygen">Oxygen</a></td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="EMT-IV">SO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#rocuronium">Rocuronium</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#sodium-bicarbonate">Sodium bicarbonate</a>
+                                        </td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#succinylcholine">Succinylcholine</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#topical-ophthalmic">Topical ophthalmic
+                                                anesthetics</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#txa">Tranexamic
+                                                Acid
+                                                (TXA)</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#vaccines">Vaccines</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;" data-label="Medication"><a
+                                                href="med-description.html#vecuronium">Vecuronium</a></td>
+                                        <td data-label="EMT">NO</td>
+                                        <td data-label="EMT-IV">NO</td>
+                                        <td class="bg-blue" style="color:white;" data-label="Paramedic">SO</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../app.js"></script>
+</body>
+
+</html>

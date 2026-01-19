@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Destination Guidelines - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 5/11/2022</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="search-wrapper">
+<div class="search-container">
+<input class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures..." type="text"/>
+<div id="searchResults"></div>
+</div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="../index.html">Introduction</a></li>
+<li><a class="active" href="destination.html">Destination Guidelines</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<!-- Navigation content will be dynamically updated by script if needed, but defining structure here -->
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li><li><a href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li><li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h3>Destination Guidelines (General)</h3>
+<p><strong>Specific Destination Guidelines</strong></p>
+<div class="destination-wrapper">
+<table class="destination-table">
+<thead>
+<tr>
+<th>Condition</th>
+<th class="hospital-name">Penrose<br/>Hospital</th>
+<th class="hospital-name">Memorial<br/>Central</th>
+<th class="hospital-name">St<br/>Francis</th>
+<th class="hospital-name">Memorial<br/>North</th>
+<th class="hospital-name">Grandview<br/>Hospital</th>
+<th class="hospital-name">Children's<br/>Hospital</th>
+<th class="hospital-name">Evans Army<br/>Hospital</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Condition"><strong>Critical Illness <span style="color:orange">(Adult)</span></strong></td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-green" data-label="Grandview Hospital">YES</td>
+<td class="bg-red" data-label="Children's Hospital">NO</td>
+<td class="bg-green" data-label="Evans Army Hospital">YES</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>General Illness <span style="color:orange">(Adult)</span></strong></td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-green" data-label="Grandview Hospital">YES</td>
+<td class="bg-red" data-label="Children's Hospital">NO</td>
+<td class="bg-green" data-label="Evans Army Hospital">YES</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>Critical Illness <span style="color:purple">(Pediatric)</span></strong></td>
+<td class="bg-red" data-label="Penrose Hospital">NO</td>
+<td class="bg-red" data-label="Memorial Central">NO</td>
+<td class="bg-red" data-label="St Francis">NO</td>
+<td class="bg-red" data-label="Memorial North">NO</td>
+<td class="bg-red" data-label="Grandview Hospital">NO</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 21</td>
+<td class="bg-red" data-label="Evans Army Hospital">NO</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>General Illness <span style="color:purple">(Pediatric)</span></strong></td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-green" data-label="Grandview Hospital">YES</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 21</td>
+<td class="bg-green" data-label="Evans Army Hospital">YES</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>STEMI</strong></td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-red" data-label="Grandview Hospital">NO</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 17</td>
+<td class="bg-red" data-label="Evans Army Hospital">NO</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>CVA: Last Known Normal ≤ 4 hrs</strong></td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-green" data-label="Grandview Hospital">YES</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 17</td>
+<td class="bg-red" data-label="Evans Army Hospital">NO</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>CVA: Last Known Normal &gt; 4 to 24 hrs</strong>
+</td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-red" data-label="St Francis">NO</td>
+<td class="bg-red" data-label="Memorial North">NO</td>
+<td class="bg-red" data-label="Grandview Hospital">NO</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 17</td>
+<td class="bg-red" data-label="Evans Army Hospital">NO</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>CVA: Last known normal &gt;24 hrs</strong></td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-green" data-label="Grandview Hospital">YES</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 17</td>
+<td class="bg-red" data-label="Evans Army Hospital">NO</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>Behavioral/ETOH</strong></td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-green" data-label="Grandview Hospital">YES</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 17</td>
+<td class="bg-green" data-label="Evans Army Hospital">YES</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>SANE (sexual assault)</strong></td>
+<td class="bg-red" data-label="Penrose Hospital">NO</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-red" data-label="St Francis">NO</td>
+<td class="bg-green" data-label="Memorial North">YES<br/><span style="font-size:0.8em">Call Prior to Transport</span></td>
+<td class="bg-red" data-label="Grandview Hospital">NO</td>
+<td class="bg-green" data-label="Children's Hospital">YES<br/>≤ 17</td>
+<td class="bg-red" data-label="Evans Army Hospital">NO</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>OB &lt; 20 weeks</strong>
+</td>
+<td class="bg-green" data-label="Penrose Hospital">YES</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-green" data-label="Grandview Hospital">YES</td>
+<td class="bg-red" data-label="Children's Hospital">NO</td>
+<td class="bg-green" data-label="Evans Army Hospital">YES</td>
+</tr>
+<tr>
+<td data-label="Condition"><strong>OB ≥ 20 weeks</strong></td>
+<td class="bg-red" data-label="Penrose Hospital">NO</td>
+<td class="bg-green" data-label="Memorial Central">YES</td>
+<td class="bg-green" data-label="St Francis">YES</td>
+<td class="bg-green" data-label="Memorial North">YES</td>
+<td class="bg-red" data-label="Grandview Hospital">NO</td>
+<td class="bg-red" data-label="Children's Hospital">NO</td>
+<td class="bg-green" data-label="Evans Army Hospital">YES</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="guideline-section" style="margin-top:30px;">
+<h4>Description</h4>
+<ol type="a">
+<li><strong>Destination choices should be based on the following:</strong>
+<ul>
+<li>Patient's request</li>
+<li>Request by family, primary care physician, or caretaker</li>
+<li>Nature and/or severity of the patient's condition</li>
+<li>Proximity to hospital</li>
+<li>Specialty care provided by a particular facility</li>
+<li>If the patient exceeds EMS capabilities for stabilization, you may transport to
+                                        <strong>ANY</strong> emergency department regardless of hospital destination
+                                        level or capabilities.
+                                    </li>
+</ul>
+</li>
+<li>If the patient has no hospital preference, transport them to the closest appropriate
+                                hospital. The destination decision <strong>MUST</strong> be documented in the
+                                destination box of the PCR (e.g., Closest, trauma center, hospital divert).</li>
+<li><strong>Override for EXTREMIS:</strong> Destination guidelines may be overridden for
+                                patients in <strong>EXTREMIS</strong> who are <strong>NOT</strong> expected to survive
+                                transport to the appropriate designated hospital. Examples:
+                                <ul>
+<li>Unmanageable airway emergencies</li>
+<li>Active cardiopulmonary arrest</li>
+<li>Imminent breach delivery (<em>EXCLUDING Children's</em>)</li>
+</ul>
+</li>
+<li>When a hospital is on divert, the patient <strong>SHOULD</strong> be transported to the
+                                next most appropriate hospital.
+                                <ul>
+<li>If <strong>ALL</strong> hospitals are on divert, facilities are then required to
+                                        accept patient as if they are not on divert.</li>
+</ul>
+</li>
+</ol>
+<h4>Children's Hospital Destination Guideline</h4>
+<p>Pediatric patients with any of the following care <strong>SHOULD</strong> be transported to
+                            Children's Hospital:</p>
+<ul>
+<li>Any critically ill pediatric patient (provider discretion)</li>
+<li>Cardiac arrest with ROSC</li>
+<li>Status seizures</li>
+<li>Medically complex child / Technology-dependent child</li>
+<li>Suspected:
+                                <ul>
+<li>Button Battery ingestion</li>
+<li>Stroke</li>
+<li>BRUE/ ALTE</li>
+<li>Non-accidental trauma</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="info-box">
+<strong>Patients with military DOD ID cards and with non life-threatening and/or psychiatric
+                            conditions SHOULD be considered for transport to Evans Army Community Hospital on Fort
+                            Carson. Contact Evans Medical Control ER at 719-526-7526</strong>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

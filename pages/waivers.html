@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Waivers - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 5/11/2022</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="search-wrapper">
+<div class="search-container">
+<input class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures..." type="text"/>
+<div id="searchResults"></div>
+</div>
+</div>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<!-- Nav content will be updated by script, keeping placeholder for structure -->
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<!-- Other sections abbreviated for initial creation, script will fill/fix text anyway -->
+</div>
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h3>Waivers (A012)</h3>
+<div class="guideline-section">
+<h4>Description</h4>
+<ol type="a">
+<li>In Colorado, the EMS provider scope of practice is defined by the Colorado Division of
+                                Public Health and Environment (CDPHE). Their decisions are based on recommendations from
+                                the Colorado Emergency Medical Practice Advisory Council; a state council of experts in
+                                EMS. The EMS scope of practice for Colorado is known as “CHAPTER TWO - RULES PERTAINING
+                                TO EMS PRACTICE AND MEDICAL DIRECTOR OVERSIGHT”.</li>
+<li>Scope of practice waivers may be authorized by the medical director under standing
+                                orders or direct verbal order for patients on federal land or being transported to or
+                                from federal land.</li>
+<li>Scope of practice waivers for patients off of federal land (unless being transported to
+                                or from federal land) can only be authorized in conjunction with EMSAC. –not currently
+                                available, therefore no waivered skills permitted for civilian patients off of federal
+                                land.</li>
+<li><strong>NO</strong> EMS provider shall function beyond their scope of practice
+                                identified in Chapter 2 until their medical director has given them specific permission
+                                to do so.</li>
+<li>Any waivered skill or medication within the prehospital guidelines will be <span class="text-brown" style="border: 2px solid #8B4513; padding: 2px;">outlined,
+                                    highlighted, or written in BROWN</span>.</li>
+</ol>
+<h4>Specific System Waiver</h4>
+<div class="destination-wrapper">
+<table class="destination-table" style="text-align: center;">
+<thead>
+<tr>
+<th style="text-align: left;">Waivered</th>
+<th style="width: 15%;">EMT</th>
+<th style="width: 15%;">EMT-IV</th>
+<th style="width: 15%;">Paramedic</th>
+</tr>
+</thead>
+<tbody>
+<!-- Medications Header Row -->
+<tr style="background-color: #eee; font-weight: bold;">
+<td colspan="4" style="text-align: center; color: black;">Medications</td>
+</tr>
+<tr>
+<td data-label="Waivered" style="text-align: left;">Ketamine (MAAM Induction
+                                            ONLY)</td>
+<td class="bg-red" data-label="EMT">NO</td>
+<td class="bg-red" data-label="EMT-IV">NO</td>
+<td class="bg-blue" data-label="Paramedic">SO</td>
+</tr>
+<tr>
+<td data-label="Waivered" style="text-align: left;">Ketamine (pain management))
+                                        </td>
+<td class="bg-red" data-label="EMT">NO</td>
+<td class="bg-red" data-label="EMT-IV">NO</td>
+<td class="bg-blue" data-label="Paramedic">SO</td>
+</tr>
+<tr>
+<td data-label="Waivered" style="text-align: left;">Rocuronium (MAAM ONLY)</td>
+<td class="bg-red" data-label="EMT">NO</td>
+<td class="bg-red" data-label="EMT-IV">NO</td>
+<td class="bg-blue" data-label="Paramedic">SO</td>
+</tr>
+<tr>
+<td data-label="Waivered" style="text-align: left;">Succinylcholine (MAAM ONLY)
+                                        </td>
+<td class="bg-red" data-label="EMT">NO</td>
+<td class="bg-red" data-label="EMT-IV">NO</td>
+<td class="bg-blue" data-label="Paramedic">SO</td>
+</tr>
+<tr>
+<td data-label="Waivered" style="text-align: left;">Vecuronium (MAAM ONLY)</td>
+<td class="bg-red" data-label="EMT">NO</td>
+<td class="bg-red" data-label="EMT-IV">NO</td>
+<td class="bg-blue" data-label="Paramedic">SO</td>
+</tr>
+<!-- Skills Header Row -->
+<tr style="background-color: #eee; font-weight: bold;">
+<td colspan="4" style="text-align: center; color: black;">Skills</td>
+</tr>
+<tr>
+<td data-label="Waivered" style="text-align: left;">Medication Assisted Airway
+                                            Management (MAAM)</td>
+<td class="bg-red" data-label="EMT">NO</td>
+<td class="bg-red" data-label="EMT-IV">NO</td>
+<td class="bg-blue" data-label="Paramedic">SO</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

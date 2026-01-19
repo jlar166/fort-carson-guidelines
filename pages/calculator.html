@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pediatric Calculator - Fort Carson EMS Guidelines</title>
+<link href="../styles.css" rel="stylesheet"/>
+<style>
+        .calculator-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .weight-input-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .weight-input {
+            padding: 15px 20px;
+            font-size: 1.5em;
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .weight-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+
+        .unit-toggle {
+            display: flex;
+            gap: 5px;
+        }
+
+        .unit-btn {
+            padding: 15px 25px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .unit-btn:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        .unit-btn:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .unit-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .weight-display {
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .dose-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .dose-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px 20px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .dose-card.emt {
+            border-left: 4px solid #28a745;
+        }
+
+        .dose-card.paramedic {
+            border-left: 4px solid #dc3545;
+        }
+
+        .drug-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .drug-class {
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+
+        .dose-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #667eea;
+            text-align: right;
+        }
+
+        .dose-route {
+            font-size: 0.85em;
+            color: #555;
+            text-align: right;
+        }
+
+        .dose-warning {
+            grid-column: 1 / -1;
+            background: #fff3cd;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            color: #856404;
+        }
+
+        .category-header {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        .no-weight-msg {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 1.1em;
+        }
+
+        .level-legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.emt {
+            background: #28a745;
+        }
+
+        .legend-dot.paramedic {
+            background: #dc3545;
+        }
+
+        @media (max-width: 600px) {
+            .weight-input {
+                width: 100%;
+            }
+
+            .weight-input-group {
+                flex-direction: column;
+            }
+
+            .dose-card {
+                grid-template-columns: 1fr;
+            }
+
+            .dose-value,
+            .dose-route {
+                text-align: left;
+            }
+        }
+
+        body.dark-mode .calculator-container {
+            background: #1e1e30;
+        }
+
+        body.dark-mode .weight-input {
+            background: #252540;
+            color: #e0e0e0;
+            border-color: #667eea;
+        }
+
+        body.dark-mode .dose-card {
+            background: #252540;
+        }
+
+        body.dark-mode .drug-name {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .dose-warning {
+            background: #3d3a20;
+            color: #ffe082;
+        }
+    </style>
+<link href="../manifest.json" rel="manifest"/>
+</head>
+<body>
+<div class="container">
+<header><img alt="Fort Carson Mountain Post" src="../assets/images/header_banner.png" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
+<h1>🚑 Fort Carson Fire and EMS</h1>
+<div class="subtitle">Prehospital Practice Guidelines</div>
+<div class="revision-date">Revised: 5/19/2022</div>
+<div class="header-controls">
+<button class="header-btn" id="darkModeToggle">🌙 Dark</button>
+<button class="header-btn" id="printBtn">🖨️ Print</button>
+</div>
+</header>
+<div class="main-content">
+<aside class="sidebar">
+<h2>Navigation</h2>
+<button class="menu-toggle" onclick="toggleMenu()">
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span>Menu</span>
+</button>
+<div class="nav-content" id="navContent">
+<div class="recent-section" id="recentPages" style="display:none;">
+<h4>📍 Recent</h4>
+<ul class="recent-list"></ul>
+</div>
+<div class="nav-section">
+<h3>General</h3>
+<ul class="nav-list">
+<li><a href="destination.html">Destination Guidelines</a></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="patient-determination.html">Patient Determination</a></li>
+<li><a href="consent.html">Consent</a></li>
+<li><a href="supportive-care.html">General Supportive Care</a></li>
+<li><a href="pediatric.html">Pediatric Overview</a></li>
+<li><a href="waivers.html">Waivers</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Procedures</h3>
+<ul class="nav-list">
+<li><a href="airway.html">Airway Management</a></li><li><a href="maam.html">MAAM</a></li>
+<li><a href="pain.html">Pain Management</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medical Emergencies</h3>
+<ul class="nav-list">
+<li><a href="respiratory.html">Respiratory</a></li>
+<li><a href="cardiac.html">Cardiac</a></li>
+<li><a href="stroke.html">CVA/Stroke</a></li>
+<li><a href="seizure.html">Seizures</a></li>
+<li><a href="diabetes.html">Diabetic Emergency</a></li>
+<li><a href="allergic.html">Allergy/Anaphylaxis</a></li><li><a href="behavioral.html">Behavioral Emergencies</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Trauma</h3>
+<ul class="nav-list">
+<li><a href="trauma-general.html">Standard Trauma Care</a></li>
+<li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+<li><a href="burns.html">Burn Injuries</a></li>
+<li><a href="extremity.html">Extremity Injuries</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Medications</h3>
+<ul class="nav-list">
+<li><a href="medications.html">Medication Overview</a></li>
+<li><a href="med-list.html">Medication List</a></li>
+</ul>
+</div>
+<div class="nav-section">
+<h3>Tools</h3>
+<ul class="nav-list">
+<li><a class="active" href="calculator.html">Pediatric Calculator</a></li>
+<li><a href="quick-cards.html">Drug Quick Cards</a></li>
+<li><a href="algorithms.html">Algorithm Flowcharts</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<main class="content-area">
+<div class="guideline-card">
+<h3>🧮 Pediatric Weight-Based Calculator</h3>
+<div class="guideline-section">
+<p>Enter the patient's weight to calculate appropriate medication doses.</p>
+<div class="calculator-container">
+<div class="weight-input-group">
+<input class="weight-input" id="weightInput" min="0" placeholder="Weight" step="0.1" type="number"/>
+<div class="unit-toggle">
+<button class="unit-btn active" id="kgBtn" onclick="setUnit('kg')">kg</button>
+<button class="unit-btn" id="lbsBtn" onclick="setUnit('lbs')">lbs</button>
+</div>
+<div class="weight-display" id="weightDisplay"></div>
+</div>
+<div class="level-legend">
+<div class="legend-item">
+<div class="legend-dot emt"></div>
+<span>EMT / EMT-IV</span>
+</div>
+<div class="legend-item">
+<div class="legend-dot paramedic"></div>
+<span>Paramedic Only</span>
+</div>
+</div>
+<div id="doseResults">
+<div class="no-weight-msg">Enter patient weight above to see calculated doses</div>
+</div>
+</div>
+<div class="warning-box">
+<strong>⚠️ Important:</strong> Always verify doses with appropriate references. This
+                            calculator is a guide only. Consider patient-specific factors when administering
+                            medications.
+                        </div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="../app.js"></script>
+<script>
+        // Medication data with weight-based dosing
+        const medications = [
+            // Cardiac/Resuscitation
+            { category: 'Cardiac / Resuscitation', name: 'Epinephrine 1:10,000', class: 'Vasopressor', dose: 0.01, unit: 'mg', route: 'IV/IO', min: 0.1, max: 1, level: 'emt', notes: 'Cardiac arrest' },
+            { category: 'Cardiac / Resuscitation', name: 'Atropine', class: 'Anticholinergic', dose: 0.02, unit: 'mg', route: 'IV/IO', min: 0.1, max: 0.5, level: 'paramedic', notes: 'Bradycardia' },
+            { category: 'Cardiac / Resuscitation', name: 'Amiodarone', class: 'Antiarrhythmic', dose: 5, unit: 'mg', route: 'IV/IO', min: null, max: 300, level: 'paramedic', notes: 'VF/pVT' },
+            { category: 'Cardiac / Resuscitation', name: 'Adenosine (1st dose)', class: 'Antiarrhythmic', dose: 0.1, unit: 'mg', route: 'Rapid IV', min: null, max: 6, level: 'paramedic', notes: 'SVT' },
+            { category: 'Cardiac / Resuscitation', name: 'Adenosine (2nd dose)', class: 'Antiarrhythmic', dose: 0.2, unit: 'mg', route: 'Rapid IV', min: null, max: 12, level: 'paramedic', notes: 'SVT' },
+
+            // Pain / Sedation
+            { category: 'Pain / Sedation', name: 'Fentanyl', class: 'Opioid Analgesic', dose: 1, unit: 'mcg', route: 'IV/IO/IN', min: null, max: 50, level: 'paramedic', notes: 'Pain management' },
+            { category: 'Pain / Sedation', name: 'Ketamine (Pain)', class: 'Dissociative', dose: 0.3, unit: 'mg', route: 'IV/IO', min: null, max: 30, level: 'paramedic', notes: 'Analgesic dose' },
+            { category: 'Pain / Sedation', name: 'Ketamine (Sedation)', class: 'Dissociative', dose: 2, unit: 'mg', route: 'IV/IO', min: null, max: null, level: 'paramedic', notes: 'Procedural sedation' },
+            { category: 'Pain / Sedation', name: 'Midazolam', class: 'Benzodiazepine', dose: 0.1, unit: 'mg', route: 'IV/IO/IN', min: null, max: 5, level: 'paramedic', notes: 'Sedation' },
+
+            // Seizure
+            { category: 'Seizure', name: 'Midazolam (Seizure)', class: 'Benzodiazepine', dose: 0.2, unit: 'mg', route: 'IN/IM', min: null, max: 10, level: 'paramedic', notes: 'Active seizure' },
+            { category: 'Seizure', name: 'Lorazepam', class: 'Benzodiazepine', dose: 0.1, unit: 'mg', route: 'IV/IO', min: null, max: 4, level: 'paramedic', notes: 'Active seizure' },
+
+            // Respiratory
+            { category: 'Respiratory', name: 'Albuterol', class: 'Bronchodilator', dose: 2.5, unit: 'mg', route: 'Nebulizer', min: 2.5, max: 5, level: 'emt', notes: 'Fixed dose' },
+            { category: 'Respiratory', name: 'Epinephrine 1:1,000', class: 'Bronchodilator', dose: 0.01, unit: 'mg', route: 'IM', min: null, max: 0.5, level: 'emt', notes: 'Anaphylaxis/Severe asthma' },
+
+            // Allergic Reaction
+            { category: 'Allergic Reaction', name: 'Epinephrine (Anaphylaxis)', class: 'Vasopressor', dose: 0.01, unit: 'mg', route: 'IM (autoinjector)', min: 0.15, max: 0.5, level: 'emt', notes: 'Use EpiPen Jr <30kg' },
+            { category: 'Allergic Reaction', name: 'Diphenhydramine', class: 'Antihistamine', dose: 1, unit: 'mg', route: 'IV/IO/IM', min: null, max: 50, level: 'paramedic', notes: 'Allergic reaction' },
+
+            // Hypoglycemia
+            { category: 'Hypoglycemia', name: 'Dextrose 10%', class: 'Glucose', dose: 5, unit: 'mL', route: 'IV/IO', min: null, max: null, level: 'emt', notes: '= 0.5g/kg glucose' },
+            { category: 'Hypoglycemia', name: 'Glucagon', class: 'Hyperglycemic', dose: 0.03, unit: 'mg', route: 'IM', min: 0.5, max: 1, level: 'emt', notes: 'If no IV access' },
+
+            // Other
+            { category: 'Other', name: 'Naloxone', class: 'Opioid Antagonist', dose: 0.1, unit: 'mg', route: 'IV/IO/IN/IM', min: null, max: 2, level: 'emt', notes: 'Opioid overdose' },
+            { category: 'Other', name: 'Ondansetron', class: 'Antiemetic', dose: 0.15, unit: 'mg', route: 'IV/IO/ODT', min: null, max: 4, level: 'paramedic', notes: 'Nausea/vomiting' },
+        ];
+
+        let currentUnit = 'kg';
+
+        function setUnit(unit) {
+            currentUnit = unit;
+            document.getElementById('kgBtn').classList.toggle('active', unit === 'kg');
+            document.getElementById('lbsBtn').classList.toggle('active', unit === 'lbs');
+            calculateDoses();
+        }
+
+        function calculateDoses() {
+            const input = parseFloat(document.getElementById('weightInput').value);
+            const resultsDiv = document.getElementById('doseResults');
+            const displayDiv = document.getElementById('weightDisplay');
+
+            if (!input || input <= 0) {
+                resultsDiv.innerHTML = '<div class="no-weight-msg">Enter patient weight above to see calculated doses</div>';
+                displayDiv.textContent = '';
+                return;
+            }
+
+            // Convert to kg if needed
+            const weightKg = currentUnit === 'lbs' ? input / 2.205 : input;
+            displayDiv.textContent = `= ${weightKg.toFixed(1)} kg`;
+
+            // Group by category
+            const categories = {};
+            medications.forEach(med => {
+                if (!categories[med.category]) {
+                    categories[med.category] = [];
+                }
+                categories[med.category].push(med);
+            });
+
+            let html = '';
+            for (const [category, meds] of Object.entries(categories)) {
+                html += `<div class="category-header">${category}</div>`;
+                html += '<div class="dose-grid">';
+
+                meds.forEach(med => {
+                    let calcDose = med.dose * weightKg;
+                    let warning = '';
+
+                    // Apply min/max
+                    if (med.min && calcDose < med.min) {
+                        warning = `⚠️ Minimum dose: ${med.min} ${med.unit}`;
+                        calcDose = med.min;
+                    }
+                    if (med.max && calcDose > med.max) {
+                        warning = `⚠️ Maximum dose: ${med.max} ${med.unit}`;
+                        calcDose = med.max;
+                    }
+
+                    // Format dose
+                    let doseDisplay = calcDose >= 10 ? calcDose.toFixed(0) : calcDose.toFixed(1);
+                    doseDisplay += ' ' + med.unit;
+
+                    html += `
+                        <div class="dose-card ${med.level}">
+                            <div>
+                                <div class="drug-name">${med.name}</div>
+                                <div class="drug-class">${med.class} • ${med.notes}</div>
+                            </div>
+                            <div>
+                                <div class="dose-value">${doseDisplay}</div>
+                                <div class="dose-route">${med.route}</div>
+                            </div>
+                            ${warning ? `<div class="dose-warning">${warning}</div>` : ''}
+                        </div>
+                    `;
+                });
+
+                html += '</div>';
+            }
+
+            resultsDiv.innerHTML = html;
+        }
+
+        // Listen for input changes
+        document.getElementById('weightInput').addEventListener('input', calculateDoses);
+    </script>
+</body>
+</html>
