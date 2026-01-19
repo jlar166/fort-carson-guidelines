@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Supportive Care - Fort Carson EMS Guidelines</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚑 Fort Carson Fire and EMS</h1>
+            <div class="subtitle">Prehospital Practice Guidelines</div>
+            <div class="revision-date">Revised: 5/19/2022</div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Navigation</h2>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Menu</span>
+                </button>
+                
+                <div class="nav-content" id="navContent">
+                    <div class="nav-section">
+                    <h3>General</h3>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Introduction</a></li>
+                        <li><a href="patient-determination.html">Patient Determination</a></li>
+                        <li><a href="consent.html">Consent</a></li>
+                        <li><a href="supportive-care.html" class="active">General Supportive Care</a></li>
+                        <li><a href="pediatric.html">Pediatric Overview</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Procedures</h3>
+                    <ul class="nav-list">
+                        <li><a href="airway.html">Airway Management</a></li>
+                        <li><a href="pain.html">Pain Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medical Emergencies</h3>
+                    <ul class="nav-list">
+                        <li><a href="respiratory.html">Respiratory</a></li>
+                        <li><a href="cardiac.html">Cardiac</a></li>
+                        <li><a href="stroke.html">CVA/Stroke</a></li>
+                        <li><a href="seizure.html">Seizures</a></li>
+                        <li><a href="diabetes.html">Diabetic Emergency</a></li>
+                        <li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Trauma</h3>
+                    <ul class="nav-list">
+                        <li><a href="trauma-general.html">Standard Trauma Care</a></li>
+                        <li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+                        <li><a href="burns.html">Burn Injuries</a></li>
+                        <li><a href="extremity.html">Extremity Injuries</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medications</h3>
+                    <ul class="nav-list">
+                        <li><a href="medications.html">Medication Overview</a></li>
+                        <li><a href="med-list.html">Medication List</a></li>
+                    </ul>
+                    </div>
+            </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="guideline-card">
+                    <h3>General Supportive Care (A005)</h3>
+                    <div class="guideline-section">
+                        <h4>Vital Signs - Normal Ranges (Adult)</h4>
+                        <ul>
+                            <li>Blood pressure: 90/60 mm/Hg to 120/80 mm/Hg</li>
+                            <li>Breathing: 12 to 18 breaths per minute</li>
+                            <li>Pulse: 60 to 100 beats per minute</li>
+                            <li>Temperature: 97.8°F to 99.1°F (36.5°C to 37.3°C)</li>
+                        </ul>
+
+                        <h4>Basic Life Support</h4>
+                        <ul>
+                            <li>Oxygen therapy - Maintain SpO2 Sat > 90% < 98%</li>
+                            <li>Monitor vital signs</li>
+                            <li>Splinting/wound care if clinically indicated</li>
+                            <li>Vascular access (IV/IO) if clinically indicated</li>
+                            <li>Transport to MOST appropriate facility</li>
+                        </ul>
+
+                        <h4>Advanced Life Support</h4>
+                        <ul>
+                            <li>All BLS Supportive care listed above</li>
+                            <li>Cardiac monitoring when indicated</li>
+                            <li>12-Lead EKG assessment when indicated</li>
+                            <li>Pain management if indicated</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const navContent = document.getElementById('navContent');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navContent.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

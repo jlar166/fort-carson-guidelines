@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respiratory Emergencies - Fort Carson EMS Guidelines</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚑 Fort Carson Fire and EMS</h1>
+            <div class="subtitle">Prehospital Practice Guidelines</div>
+            <div class="revision-date">Revised: 5/19/2022</div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Navigation</h2>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Menu</span>
+                </button>
+                
+                <div class="nav-content" id="navContent">
+                    <div class="nav-section">
+                    <h3>General</h3>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Introduction</a></li>
+                        <li><a href="patient-determination.html">Patient Determination</a></li>
+                        <li><a href="consent.html">Consent</a></li>
+                        <li><a href="supportive-care.html">General Supportive Care</a></li>
+                        <li><a href="pediatric.html">Pediatric Overview</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Procedures</h3>
+                    <ul class="nav-list">
+                        <li><a href="airway.html">Airway Management</a></li>
+                        <li><a href="pain.html">Pain Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medical Emergencies</h3>
+                    <ul class="nav-list">
+                        <li><a href="respiratory.html" class="active">Respiratory</a></li>
+                        <li><a href="cardiac.html">Cardiac</a></li>
+                        <li><a href="stroke.html">CVA/Stroke</a></li>
+                        <li><a href="seizure.html">Seizures</a></li>
+                        <li><a href="diabetes.html">Diabetic Emergency</a></li>
+                        <li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Trauma</h3>
+                    <ul class="nav-list">
+                        <li><a href="trauma-general.html">Standard Trauma Care</a></li>
+                        <li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+                        <li><a href="burns.html">Burn Injuries</a></li>
+                        <li><a href="extremity.html">Extremity Injuries</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medications</h3>
+                    <ul class="nav-list">
+                        <li><a href="medications.html">Medication Overview</a></li>
+                        <li><a href="med-list.html">Medication List</a></li>
+                    </ul>
+                    </div>
+            </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="guideline-card">
+                    <h3>Respiratory Emergencies (C001-C004)</h3>
+                    <div class="guideline-section">
+                        <h4>Standard Dyspnea Care</h4>
+                        <p>Position of comfort, maintain airway, oxygen to maintain SpO2 90-98%, obtain VS, apply EtCO2,
+                            early 12-lead EKG if indicated.</p>
+
+                        <h4>Treatment by Lung Sounds</h4>
+
+                        <strong>Wheezes/Rhonchi (Asthma/COPD):</strong>
+                        <ul>
+                            <li><strong>Albuterol Nebulizer:</strong> 2.5mg in 3mL NS every 10 min (Adult/Peds >2)</li>
+                            <li><strong>Ipratropium:</strong> 0.5mg with albuterol (Adult), 0.25mg (Peds)</li>
+                            <li><strong>Dexamethasone:</strong> 10mg IV/IO/IM/PO (Adult), 0.5mg/kg (Peds, max 10mg)</li>
+                            <li>Consider CPAP if no improvement</li>
+                            <li><strong>Magnesium Sulfate:</strong> 2g in 50mL NS over 10min (severe cases)</li>
+                            <li><strong>Epinephrine 1:1,000 IM:</strong> 0.3mg for severe attacks not responding</li>
+                        </ul>
+
+                        <strong>Rales (CHF/Pulmonary Edema):</strong>
+                        <ul>
+                            <li><strong>Nitroglycerin:</strong> 0.4-1.2mg sublingual based on BP</li>
+                            <li>Consider early CPAP</li>
+                            <li><strong>Albuterol:</strong> If EtCO2 reveals bronchospasm</li>
+                        </ul>
+
+                        <strong>Stridor (Croup/Obstruction):</strong>
+                        <ul>
+                            <li><strong>For Croup:</strong> Epinephrine 1:1,000 nebulized - 5mg (Adult), 0.5mg/kg (Peds,
+                                max 5mg)</li>
+                            <li><strong>Dexamethasone:</strong> 10mg IV/IO/IM/PO (Adult), 0.5mg/kg (Peds)</li>
+                            <li><strong>For FBAO:</strong> Heimlich maneuver, visualize with laryngoscope, consider
+                                cricothyrotomy</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const navContent = document.getElementById('navContent');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navContent.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

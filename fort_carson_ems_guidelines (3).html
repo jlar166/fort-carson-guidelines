@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Carson Fire & EMS - Prehospital Practice Guidelines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .revision-date {
+            color: #95a5a6;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .search-container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .nav-section {
+            margin-bottom: 25px;
+        }
+
+        .nav-section h3 {
+            color: #667eea;
+            font-size: 1em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-bottom: 8px;
+        }
+
+        .nav-list a {
+            color: #555;
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-list a:hover {
+            background: #f0f0f0;
+            color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .content-area {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .guideline-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .guideline-card.hidden {
+            display: none;
+        }
+
+        .guideline-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .guideline-section {
+            margin-bottom: 20px;
+        }
+
+        .guideline-section h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .guideline-section ul {
+            margin-left: 20px;
+        }
+
+        .guideline-section li {
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .medication-table, .skill-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .medication-table th, .medication-table td,
+        .skill-table th, .skill-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .medication-table th, .skill-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .medication-table tr:nth-child(even),
+        .skill-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .badge-emt {
+            background: #28a745;
+            color: white;
+        }
+
+        .badge-paramedic {
+            background: #dc3545;
+            color: white;
+        }
+
+        .badge-all {
+            background: #17a2b8;
+            color: white;
+        }
+
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚑 Fort Carson Fire and EMS</h1>
+            <div class="subtitle">Prehospital Practice Guidelines</div>
+            <div class="revision-date">Revised: 5/19/2022</div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" class="search-box" id="searchInput" placeholder="🔍 Search guidelines, medications, procedures...">
+        </div>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Navigation</h2>
+                
+                <div class="nav-section">
+                    <h3>General</h3>
+                    <ul class="nav-list">
+                        <li><a href="#" data-section="introduction">Introduction</a></li>
+                        <li><a href="#" data-section="patient-determination">Patient Determination</a></li>
+                        <li><a href="#" data-section="consent">Consent</a></li>
+                        <li><a href="#" data-section="refusal">Patient Refusal</a></li>
+                        <li><a href="#" data-section="supportive-care">General Supportive Care</a></li>
+                        <li><a href="#" data-section="pediatric">Pediatric Overview</a></li>
+                        <li><a href="#" data-section="destination">Patient Destination</a></li>
+                        <li><a href="#" data-section="death">Death in Field</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Procedures</h3>
+                    <ul class="nav-list">
+                        <li><a href="#" data-section="airway">Airway Management</a></li>
+                        <li><a href="#" data-section="maam">MAAM</a></li>
+                        <li><a href="#" data-section="pain">Pain Management</a></li>
+                        <li><a href="#" data-section="spinal">Spinal Motion Restriction</a></li>
+                        <li><a href="#" data-section="vascular">Vascular Access</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medical Emergencies</h3>
+                    <ul class="nav-list">
+                        <li><a href="#" data-section="respiratory">Respiratory</a></li>
+                        <li><a href="#" data-section="cardiac">Cardiac</a></li>
+                        <li><a href="#" data-section="stroke">CVA/Stroke</a></li>
+                        <li><a href="#" data-section="seizure">Seizures</a></li>
+                        <li><a href="#" data-section="diabetes">Diabetic Emergency</a></li>
+                        <li><a href="#" data-section="allergic">Allergy/Anaphylaxis</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Trauma</h3>
+                    <ul class="nav-list">
+                        <li><a href="#" data-section="trauma-general">Standard Trauma Care</a></li>
+                        <li><a href="#" data-section="hemorrhagic">Hemorrhagic Shock</a></li>
+                        <li><a href="#" data-section="burns">Burn Injuries</a></li>
+                        <li><a href="#" data-section="extremity">Extremity Injuries</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medications</h3>
+                    <ul class="nav-list">
+                        <li><a href="#" data-section="medications">Medication Overview</a></li>
+                        <li><a href="#" data-section="med-list">Medication List</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <!-- Introduction Section -->
+                <div class="guideline-card" id="introduction">
+                    <h3>Introduction</h3>
+                    <div class="guideline-section">
+                        <p>The following guidelines have been developed and approved by the FCFD and EACH EMS in conjunction with a working group representing FCFD, EACH EMS, AMR, CSFD, SCRETAC, SECRETAC and P2PRETAC.</p>
+                        
+                        <div class="info-box">
+                            <strong>Purpose:</strong> These guidelines delineate the expected standard of care and acts allowed for EMT, EMT-IV and paramedic providers under local medical direction.
+                        </div>
+
+                        <h4>Key Principles</h4>
+                        <ul>
+                            <li>Guidelines are evidence-based where possible</li>
+                            <li>Reviewed on a six-month basis</li>
+                            <li>No substitute for sound clinical judgment</li>
+                            <li>Contact medical control when situations arise outside guidelines</li>
+                        </ul>
+
+                        <h4>Guideline Format</h4>
+                        <p>The electronic format includes hyperlinks for quick navigation between related guidelines, procedures, and medications.</p>
+                    </div>
+                </div>
+
+                <!-- Patient Determination -->
+                <div class="guideline-card" id="patient-determination">
+                    <h3>Patient Determination (A002)</h3>
+                    <div class="guideline-section">
+                        <h4>Description</h4>
+                        <p>When in doubt as to whether an individual is a "patient", err on the side of caution and perform a full assessment as well as documentation.</p>
+
+                        <h4>Criteria for Patient Status</h4>
+                        <ul>
+                            <li>Person has a complaint resulting in a call for help</li>
+                            <li>Illness or injury suspected based on appearance or MOI</li>
+                            <li>Person meets decision-making capacity criteria</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>Important:</strong> If further care and evaluation is warranted AND the patient is refusing to be treated/transported, then a refusal MUST be completed.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consent -->
+                <div class="guideline-card" id="consent">
+                    <h3>Consent (A003)</h3>
+                    <div class="guideline-section">
+                        <h4>Decision Making Capacity</h4>
+                        <p>A person has appropriate decision making capacity if they:</p>
+                        <ul>
+                            <li>Are alert, oriented, reliable, calm, and cooperative</li>
+                            <li>Understand the nature and consequences of their illness or injury</li>
+                            <li>Understand the nature and consequences of proposed or refused treatment</li>
+                            <li>Have NO IMPAIRED JUDGEMENT</li>
+                        </ul>
+
+                        <h4>Age of Consent</h4>
+                        <ul>
+                            <li>Patient must be over 18 years of age OR</li>
+                            <li>Between 15 and 18 years and "emancipated"</li>
+                        </ul>
+
+                        <h4>Implied Consent</h4>
+                        <p>Consent is "implied" when the patient is unable to consent to treatment due to age, mental status, or medical condition AND no responsible party is available to grant that consent.</p>
+
+                        <div class="info-box">
+                            <strong>Legal Considerations:</strong> In no event should legal consent procedures be allowed to delay immediately required treatment.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Supportive Care -->
+                <div class="guideline-card" id="supportive-care">
+                    <h3>General Supportive Care (A005)</h3>
+                    <div class="guideline-section">
+                        <h4>Vital Signs - Normal Ranges (Adult)</h4>
+                        <ul>
+                            <li>Blood pressure: 90/60 mm/Hg to 120/80 mm/Hg</li>
+                            <li>Breathing: 12 to 18 breaths per minute</li>
+                            <li>Pulse: 60 to 100 beats per minute</li>
+                            <li>Temperature: 97.8°F to 99.1°F (36.5°C to 37.3°C)</li>
+                        </ul>
+
+                        <h4>Basic Life Support</h4>
+                        <ul>
+                            <li>Oxygen therapy - Maintain SpO2 Sat > 90% < 98%</li>
+                            <li>Monitor vital signs</li>
+                            <li>Splinting/wound care if clinically indicated</li>
+                            <li>Vascular access (IV/IO) if clinically indicated</li>
+                            <li>Transport to MOST appropriate facility</li>
+                        </ul>
+
+                        <h4>Advanced Life Support</h4>
+                        <ul>
+                            <li>All BLS Supportive care listed above</li>
+                            <li>Cardiac monitoring when indicated</li>
+                            <li>12-Lead EKG assessment when indicated</li>
+                            <li>Pain management if indicated</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pediatric Overview -->
+                <div class="guideline-card" id="pediatric">
+                    <h3>General Pediatric Overview (A006)</h3>
+                    <div class="guideline-section">
+                        <h4>Definition</h4>
+                        <p>Pediatric patients are defined as birth until patient's weight based calculations equal the adult dose (Benzodiazepines are an exception)</p>
+
+                        <h4>Pediatric Vital Sign Ranges</h4>
+                        <table class="skill-table">
+                            <thead>
+                                <tr>
+                                    <th>Age Group</th>
+                                    <th>Respiratory Rate</th>
+                                    <th>Heart Rate</th>
+                                    <th>Systolic BP</th>
+                                    <th>Weight (lbs)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Neonate (<28 days)</td>
+                                    <td>30-53</td>
+                                    <td>100-205</td>
+                                    <td>67-84</td>
+                                    <td>4.5-7</td>
+                                </tr>
+                                <tr>
+                                    <td>Infant (1-12 months)</td>
+                                    <td>30-53</td>
+                                    <td>100-190</td>
+                                    <td>72-104</td>
+                                    <td>9-22</td>
+                                </tr>
+                                <tr>
+                                    <td>Toddler (1-2 years)</td>
+                                    <td>22-37</td>
+                                    <td>98-140</td>
+                                    <td>86-106</td>
+                                    <td>22-31</td>
+                                </tr>
+                                <tr>
+                                    <td>Preschooler (3-5 years)</td>
+                                    <td>20-28</td>
+                                    <td>80-120</td>
+                                    <td>89-112</td>
+                                    <td>31-40</td>
+                                </tr>
+                                <tr>
+                                    <td>School Age (6-11 years)</td>
+                                    <td>18-25</td>
+                                    <td>75-118</td>
+                                    <td>97-115</td>
+                                    <td>41-92</td>
+                                </tr>
+                                <tr>
+                                    <td>Adolescent (12-15 years)</td>
+                                    <td>12-20</td>
+                                    <td>60-100</td>
+                                    <td>110-131</td>
+                                    <td>>110</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="warning-box">
+                            <strong>Special Considerations:</strong>
+                            <ul>
+                                <li>Airways are smaller, softer, and easier to obstruct</li>
+                                <li>Respiratory reserve is small</li>
+                                <li>Circulatory reserve is small</li>
+                                <li>Listen to parents - they know when changes have occurred</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Airway Management -->
+                <div class="guideline-card" id="airway">
+                    <h3>Airway Management (B002)</h3>
+                    <div class="guideline-section">
+                        <h4>Airway Skills by Provider Level</h4>
+                        <table class="skill-table">
+                            <thead>
+                                <tr>
+                                    <th>Skill</th>
+                                    <th>EMT</th>
+                                    <th>EMT-IV</th>
+                                    <th>Paramedic</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>NPA/OPA</td>
+                                    <td>✓</td>
+                                    <td>✓</td>
+                                    <td>✓</td>
+                                </tr>
+                                <tr>
+                                    <td>CPAP</td>
+                                    <td>✓</td>
+                                    <td>✓</td>
+                                    <td>✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Supraglottic Airway</td>
+                                    <td>✓</td>
+                                    <td>✓</td>
+                                    <td>✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Oral Intubation</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Cricothyrotomy</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓</td>
+                                </tr>
+                                <tr>
+                                    <td>Needle Decompression</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box">
+                            <strong>Advanced Airway Preference Order:</strong>
+                            <ul>
+                                <li><strong>Respiratory Arrest/MAAM:</strong> iGel or VL intubation > DL intubation</li>
+                                <li><strong>Cardiac Arrest:</strong> iGel > VL intubation > DL intubation</li>
+                                <li><strong>ROSC:</strong> iGel or VL intubation > DL intubation</li>
+                            </ul>
+                        </div>
+
+                        <div class="danger-box">
+                            <strong>Critical:</strong> NO MORE THAN 3 ETT TOTAL ATTEMPTS PER PATIENT
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pain Management -->
+                <div class="guideline-card" id="pain">
+                    <h3>Pain Management (B004)</h3>
+                    <div class="guideline-section">
+                        <h4>Objectives</h4>
+                        <p>The objective of pain management is not complete relief of all pain, but rather to make a patient's pain tolerable to allow for assessment, treatment, and transport.</p>
+
+                        <h4>Medication Options</h4>
+                        
+                        <strong>Mild to Moderate Pain:</strong>
+                        <ul>
+                            <li><strong>Acetaminophen IV/IO:</strong>
+                                <ul>
+                                    <li>Adult <50kg: 500mg</li>
+                                    <li>Adult >50kg: 1,000mg</li>
+                                    <li>Pediatric: 15mg/kg (MAX 1000mg)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>Moderate to Severe Pain:</strong>
+                        <ul>
+                            <li><strong>Ketamine:</strong>
+                                <ul>
+                                    <li>Adult: 30mg IV/IO or 50mg IM/IN (up to 3 doses)</li>
+                                    <li>Pediatric >7: 0.3mg/kg IV/IO or 0.5mg/kg IM/IN</li>
+                                </ul>
+                            </li>
+                            <li><strong>Fentanyl:</strong>
+                                <ul>
+                                    <li>Adult: 50-100mcg IV/IO or IN/IM</li>
+                                    <li>Pediatric: 1mcg/kg IV/IO or IN/IM</li>
+                                </ul>
+                            </li>
+                            <li><strong>Hydromorphone:</strong>
+                                <ul>
+                                    <li>Adult: 0.5mg IV/IO or IM (NOT REPEATED)</li>
+                                    <li>Pediatric: NOT allowed</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>Precautions:</strong>
+                            <ul>
+                                <li>Monitor ECG, SpO2, EtCO2, and BP continuously</li>
+                                <li>Consider ½ typical dosing in elderly patients</li>
+                                <li>Watch for respiratory depression</li>
+                                <li>Pain medications should only be given to hemodynamically stable patients</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Respiratory -->
+                <div class="guideline-card" id="respiratory">
+                    <h3>Respiratory Emergencies (C001-C004)</h3>
+                    <div class="guideline-section">
+                        <h4>Standard Dyspnea Care</h4>
+                        <p>Position of comfort, maintain airway, oxygen to maintain SpO2 90-98%, obtain VS, apply EtCO2, early 12-lead EKG if indicated.</p>
+
+                        <h4>Treatment by Lung Sounds</h4>
+                        
+                        <strong>Wheezes/Rhonchi (Asthma/COPD):</strong>
+                        <ul>
+                            <li><strong>Albuterol Nebulizer:</strong> 2.5mg in 3mL NS every 10 min (Adult/Peds >2)</li>
+                            <li><strong>Ipratropium:</strong> 0.5mg with albuterol (Adult), 0.25mg (Peds)</li>
+                            <li><strong>Dexamethasone:</strong> 10mg IV/IO/IM/PO (Adult), 0.5mg/kg (Peds, max 10mg)</li>
+                            <li>Consider CPAP if no improvement</li>
+                            <li><strong>Magnesium Sulfate:</strong> 2g in 50mL NS over 10min (severe cases)</li>
+                            <li><strong>Epinephrine 1:1,000 IM:</strong> 0.3mg for severe attacks not responding</li>
+                        </ul>
+
+                        <strong>Rales (CHF/Pulmonary Edema):</strong>
+                        <ul>
+                            <li><strong>Nitroglycerin:</strong> 0.4-1.2mg sublingual based on BP</li>
+                            <li>Consider early CPAP</li>
+                            <li><strong>Albuterol:</strong> If EtCO2 reveals bronchospasm</li>
+                        </ul>
+
+                        <strong>Stridor (Croup/Obstruction):</strong>
+                        <ul>
+                            <li><strong>For Croup:</strong> Epinephrine 1:1,000 nebulized - 5mg (Adult), 0.5mg/kg (Peds, max 5mg)</li>
+                            <li><strong>Dexamethasone:</strong> 10mg IV/IO/IM/PO (Adult), 0.5mg/kg (Peds)</li>
+                            <li><strong>For FBAO:</strong> Heimlich maneuver, visualize with laryngoscope, consider cricothyrotomy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cardiac -->
+                <div class="guideline-card" id="cardiac">
+                    <h3>Cardiac Emergencies (D001-D008)</h3>
+                    <div class="guideline-section">
+                        <h4>Acute Coronary Syndrome (ACS)</h4>
+                        
+                        <strong>Cardiac Alert Criteria:</strong>
+                        <ul>
+                            <li>ACS symptoms AND</li>
+                            <li>12-lead showing:
+                                <ul>
+                                    <li>ST elevation ≥1mm in 2+ contiguous leads, OR</li>
+                                    <li>ST elevation ≥1mm in aVR with widespread depression, OR</li>
+                                    <li>2mm ST depression in V1-V2 (posterior), OR</li>
+                                    <li>Computer interpretation of "ACUTE MI"</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>Treatment:</strong>
+                        <ul>
+                            <li><strong>Aspirin:</strong> 162-324mg PO (Adult only)</li>
+                            <li>Establish vascular access</li>
+                            <li>If signs of poor perfusion: Fluid therapy 250-500mL NS</li>
+                            <li>Consider pain management</li>
+                            <li>Notify receiving hospital ASAP - request CARDIAC ALERT</li>
+                        </ul>
+
+                        <h4>Bradydysrhythmia</h4>
+                        <strong>If Symptomatic with signs of poor perfusion:</strong>
+                        <ul>
+                            <li><strong>Atropine:</strong>
+                                <ul>
+                                    <li>Adult: 0.5mg IV/IO every 3min (MAX 3mg)</li>
+                                    <li>Peds: 0.02mg/kg IV/IO (MIN 0.1mg, MAX single dose 0.5mg)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Transcutaneous Pacing:</strong>
+                                <ul>
+                                    <li>Adult: 60 bpm, increase energy until capture</li>
+                                    <li>Peds: 80 bpm, increase energy until capture</li>
+                                </ul>
+                            </li>
+                            <li><strong>Epinephrine Infusion:</strong> 1mg in 1,000mL NS wide open to gravity</li>
+                        </ul>
+
+                        <h4>Tachydysrhythmia</h4>
+                        <strong>Narrow Complex (QRS <0.12):</strong>
+                        <ul>
+                            <li><strong>Vagal Maneuvers</strong> (if stable)</li>
+                            <li><strong>Adenosine:</strong>
+                                <ul>
+                                    <li>Adult: 6-12mg rapid IV/IO with 20mL NS flush</li>
+                                    <li>Peds: 0.1mg/kg (max 12mg), repeat at 0.2mg/kg</li>
+                                </ul>
+                            </li>
+                            <li><strong>Diltiazem</strong> (irregular):
+                                <ul>
+                                    <li>Adult: 20mg IV/IO over 2-5min, repeat at 25mg after 15min</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>Wide Complex (QRS >0.12):</strong>
+                        <ul>
+                            <li><strong>Amiodarone</strong> (regular monomorphic):
+                                <ul>
+                                    <li>Adult: 150mg IV/IO over 10min</li>
+                                </ul>
+                            </li>
+                            <li><strong>Magnesium</strong> (polymorphic/torsades):
+                                <ul>
+                                    <li>Adult: 2g slow IV/IO over 10min</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>If Signs of Poor Perfusion:</strong>
+                        <ul>
+                            <li><strong>Synchronized Cardioversion</strong></li>
+                            <li>Consider sedation with Midazolam first if stable</li>
+                        </ul>
+
+                        <h4>Medical Cardiac Arrest</h4>
+                        
+                        <strong>Adult >19 Years:</strong>
+                        <ul>
+                            <li><strong>Withhold Resuscitation if ALL present:</strong>
+                                <ul>
+                                    <li>Unwitnessed arrest AND</li>
+                                    <li>Age ≥73 years AND</li>
+                                    <li>PEA/Asystole (non-shockable)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Chest Compressions:</strong> 2 minutes cycles</li>
+                            <li><strong>Airway:</strong> First 3 cycles passive O2, then PPV</li>
+                            <li><strong>For VF/VT:</strong> Defibrillate at MAX joules</li>
+                            <li><strong>Consider TOR after:</strong> 4 cycles (8min) AND EtCO2 <10</li>
+                        </ul>
+
+                        <strong>Pediatric <18 Years:</strong>
+                        <ul>
+                            <li><strong>Epinephrine 1:10,000:</strong>
+                                <ul>
+                                    <li>>13: 1mg IV/IO (MAX 3 doses)</li>
+                                    <li><13: 0.01mg/kg IV/IO</li>
+                                </ul>
+                            </li>
+                            <li><strong>Amiodarone:</strong>
+                                <ul>
+                                    <li>>13: 300mg IV/IO, then 150mg</li>
+                                    <li><13: 5mg/kg IV/IO (up to 3 doses)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Defibrillation:</strong>
+                                <ul>
+                                    <li>>13: MAX joules</li>
+                                    <li><13: 4 J/kg</li>
+                                </ul>
+                            </li>
+                            <li><strong>Consider TOR after:</strong> 10 cycles (20min)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stroke/CVA -->
+                <div class="guideline-card" id="stroke">
+                    <h3>Cerebral Vascular Accident (E002)</h3>
+                    <div class="guideline-section">
+                        <h4>BE-FAST Stroke Screening</h4>
+                        <ul>
+                            <li><strong>B</strong>alance - sudden loss of balance or coordination</li>
+                            <li><strong>E</strong>yes - sudden change in vision or abnormal pupils</li>
+                            <li><strong>F</strong>ace - does one side droop?</li>
+                            <li><strong>A</strong>rms - does one arm drift?</li>
+                            <li><strong>S</strong>peech - is speech slurred or strange?</li>
+                            <li><strong>T</strong>ime - when was last known normal?</li>
+                        </ul>
+
+                        <h4>Stroke Alert Activation & Transport</h4>
+                        
+                        <strong>Last Known Normal <4 hours:</strong>
+                        <ul>
+                            <li>Transport to closest facility that provides TPA</li>
+                            <li>Facilities: St. Francis, Memorial North, Memorial Central, Penrose Main</li>
+                        </ul>
+
+                        <strong>Last Known Normal 4-24 hours:</strong>
+                        <ul>
+                            <li>Transport to facility with intracranial intervention</li>
+                            <li>Facilities: Memorial Central, Penrose Main</li>
+                        </ul>
+
+                        <strong>Last Known Normal >24 hours:</strong>
+                        <ul>
+                            <li>Transport to closest appropriate facility</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>Special Considerations:</strong>
+                            <ul>
+                                <li>Elevate head of bed 30° if possible</li>
+                                <li>Establish two 18G or larger IV sites if possible</li>
+                                <li>Rule out hypoglycemia, seizure, infection, hyperthermia</li>
+                                <li>Monitor BP but avoid excessive fluid administration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seizure -->
+                <div class="guideline-card" id="seizure">
+                    <h3>Seizures (E003)</h3>
+                    <div class="guideline-section">
+                        <h4>Medical/Trauma Etiology</h4>
+                        
+                        <strong>First-Line Treatment:</strong>
+                        <ul>
+                            <li><strong>Midazolam:</strong>
+                                <ul>
+                                    <li>Adult: 5mg IV/IO/IM or 5-10mg IN (MAX 3 doses)</li>
+                                    <li>Peds: 0.1mg/kg IV/IO/IM/IN (max single dose 5mg)</li>
+                                </ul>
+                            </li>
+                            <li><strong>OR Ativan (Lorazepam):</strong>
+                                <ul>
+                                    <li>Adult: 2mg IV/IO/deep IM (MAX 3 doses)</li>
+                                    <li>Peds: 0.1mg/kg IV/IO/deep IM (max single dose 4mg)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>If seizure uncontrolled AND imminent respiratory compromise:</strong>
+                        <ul>
+                            <li>Consider MAAM (see MAAM guideline)</li>
+                            <li>Use benzodiazepines for sedation post-MAAM</li>
+                        </ul>
+
+                        <h4>Eclampsia</h4>
+                        <ul>
+                            <li><strong>Magnesium Sulfate:</strong>
+                                <ul>
+                                    <li>Adult: 5g in 50mL NS/D5W over 5-10min (NOT repeated)</li>
+                                </ul>
+                            </li>
+                            <li>Patient does NOT need to be actively seizing</li>
+                            <li>Consider up to 6 weeks post-partum</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <strong>Important:</strong> Assess for occult trauma and substance abuse. In patients >50 years, seizures may be due to dysrhythmias or stroke.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diabetic Emergency -->
+                <div class="guideline-card" id="diabetes">
+                    <h3>Diabetic Emergency (E007)</h3>
+                    <div class="guideline-section">
+                        <h4>Hypoglycemia (<60 mg/dL)</h4>
+                        
+                        <strong>If able to follow commands and maintain airway:</strong>
+                        <ul>
+                            <li><strong>Oral Glucose:</strong> 1-2 full tubes (15-30g) buccal every 10min</li>
+                        </ul>
+
+                        <strong>If unable to maintain airway OR no improvement:</strong>
+                        <ul>
+                            <li><strong>Dextrose IV/IO:</strong>
+                                <ul>
+                                    <li>Adult: 12.5-25g (50mL of 50% solution)</li>
+                                    <li>Peds <13: 10mL/kg of 10% solution slowly over 10min</li>
+                                    <li>Repeat after 10min if needed until BGL >60</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>If vascular access unsuccessful:</strong>
+                        <ul>
+                            <li><strong>Glucagon IM:</strong>
+                                <ul>
+                                    <li>Adult: 1mg IM (NOT repeated)</li>
+                                    <li>Peds: 0.5mg IM (NOT repeated)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>Hyperglycemia</h4>
+                        <ul>
+                            <li>Establish vascular access</li>
+                            <li><strong>Fluid Therapy:</strong> 20mL/kg NS IV/IO until improved perfusion</li>
+                            <li>Cardiac monitor and 12-lead EKG</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>Special Considerations:</strong>
+                            <ul>
+                                <li>DO NOT let alcohol confuse the clinical picture - alcoholics frequently develop hypoglycemia</li>
+                                <li>If symptoms don't resolve after treatment, consider other causes</li>
+                                <li>Patient must eat complex carbohydrates before refusing care</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allergic/Anaphylaxis -->
+                <div class="guideline-card" id="allergic">
+                    <h3>Allergy/Anaphylaxis (E005)</h3>
+                    <div class="guideline-section">
+                        <h4>Moderate to Severe Allergic Reaction</h4>
+                        
+                        <strong>First-Line Treatment:</strong>
+                        <ul>
+                            <li><strong>Epinephrine 1:1,000 IM:</strong>
+                                <ul>
+                                    <li>Adult: 0.3mg (0.3mL) IM every 3-5min</li>
+                                    <li>Peds: 0.01mg/kg (0.01mL/kg) IM every 3-5min</li>
+                                </ul>
+                            </li>
+                            <li><strong>Dexamethasone:</strong>
+                                <ul>
+                                    <li>Adult: 10mg IV/IO/IM/PO</li>
+                                    <li>Peds: 0.5mg/kg IV/IO/IM/PO (max 10mg)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Diphenhydramine (Benadryl):</strong>
+                                <ul>
+                                    <li>Adult: 50mg IV/IO/IM/PO</li>
+                                    <li>Peds: 1-2mg/kg IV/IO/IM/PO (max 50mg)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>If Dyspnea present:</strong>
+                        <ul>
+                            <li><strong>Albuterol Nebulizer:</strong>
+                                <ul>
+                                    <li>Adult/Peds >2: 2.5mg in 3mL NS every 10min</li>
+                                    <li>Peds <2: 1.25mg in 3mL NS</li>
+                                </ul>
+                            </li>
+                            <li>Consider CPAP if unresolved</li>
+                        </ul>
+
+                        <strong>If Signs of Poor Perfusion:</strong>
+                        <ul>
+                            <li><strong>Epinephrine Infusion:</strong> 1mg in 1,000mL NS wide open to gravity
+                                <ul>
+                                    <li>Titrate to BP >90 systolic, return of distal pulses, improved mental status</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>Generalized Allergic Reaction (Mild)</h4>
+                        <ul>
+                            <li><strong>Diphenhydramine:</strong> Same dosing as above</li>
+                            <li>General supportive care</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Trauma General -->
+                <div class="guideline-card" id="trauma-general">
+                    <h3>Standard Trauma Care (F001)</h3>
+                    <div class="guideline-section">
+                        <h4>General Principles</h4>
+                        <ul>
+                            <li>Scene times should be 10 minutes or less if possible</li>
+                            <li>Invasive treatments should be performed en route</li>
+                            <li>Early notification to receiving facility</li>
+                            <li>EtCO2 SHOULD be utilized in any major trauma</li>
+                            <li>Avoid hypothermia - maintain patient warmth</li>
+                        </ul>
+
+                        <h4>Initial Assessment</h4>
+                        <ul>
+                            <li>Consider C-spine precautions (see Spinal Motion Restriction)</li>
+                            <li>Maintain patent airway and OXYGENATION</li>
+                            <li>Monitor EtCO2 and obtain VS</li>
+                            <li>Complete neurologic exam</li>
+                            <li>Control bleeding:
+                                <ul>
+                                    <li>Direct pressure and/or</li>
+                                    <li>Tourniquet and/or</li>
+                                    <li>Hemostatic agent and/or</li>
+                                    <li>Pressure point and/or</li>
+                                    <li>Pelvic binder and/or</li>
+                                    <li>Wound packing (junctional injuries ONLY)</li>
+                                </ul>
+                            </li>
+                            <li>Establish vascular access if clinically indicated</li>
+                            <li>Treat for shock if clinically indicated</li>
+                        </ul>
+
+                        <div class="danger-box">
+                            <strong>Pregnant Trauma Patients:</strong>
+                            <ul>
+                                <li>Avoid supine position - left lateral recumbent >30°</li>
+                                <li>VS may be altered (increased HR, decreased BP, increased blood volume)</li>
+                                <li>Traumatic arrest with gestation >23 weeks = rapid transport for perimortem c-section</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hemorrhagic Shock -->
+                <div class="guideline-card" id="hemorrhagic">
+                    <h3>Hemorrhagic Shock (F002)</h3>
+                    <div class="guideline-section">
+                        <h4>Signs and Symptoms of Poor Perfusion</h4>
+                        <ul>
+                            <li>Delayed capillary refill >2 seconds</li>
+                            <li>Adult: Systolic BP <90</li>
+                            <li>Pediatric: Low systolic BP for age (see Pediatric Field Guide)</li>
+                            <li>Depressed or deteriorating mental status</li>
+                            <li>Absent or decreased peripheral pulses</li>
+                        </ul>
+
+                        <h4>Treatment Protocol</h4>
+                        
+                        <strong>Control Bleeding:</strong>
+                        <ul>
+                            <li>Direct pressure</li>
+                            <li>Tourniquet</li>
+                            <li>Hemostatic agent</li>
+                            <li>Pressure point</li>
+                            <li>Pelvic binder</li>
+                            <li>Wound packing (junctional injuries)</li>
+                        </ul>
+
+                        <strong>Manage Heat Loss:</strong>
+                        <ul>
+                            <li>Apply space blanket</li>
+                            <li>Keep patient warm</li>
+                        </ul>
+
+                        <strong>Fluid Therapy (Permissive Hypotension):</strong>
+                        <ul>
+                            <li><strong>Goal:</strong> Maintain BP 80-100 systolic (or >Peds Guide recommendation)</li>
+                            <li><strong>Dosing:</strong> 10mL/kg NS IV/IO, repeat until:
+                                <ul>
+                                    <li>Restoration of distal pulses AND/OR</li>
+                                    <li>Improved mental status AND/OR</li>
+                                    <li>Permissive hypotension achieved (80-100 systolic)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <strong>Tranexamic Acid (TXA):</strong>
+                        <ul>
+                            <li><strong>Criteria:</strong> Suspected shock <3 hours AND NO contraindications</li>
+                            <li><strong>Contraindications:</strong>
+                                <ul>
+                                    <li>Age <13 years</li>
+                                    <li>Isolated head injury</li>
+                                    <li>Time of injury >3 hours</li>
+                                    <li>Active intravascular clotting (DVT/PE)</li>
+                                    <li>GI bleed</li>
+                                </ul>
+                            </li>
+                            <li><strong>Dosing:</strong>
+                                <ul>
+                                    <li>Adult: Mix 1g TXA in 50mL NS, infuse over 10min IV/IO</li>
+                                    <li>Peds <13: NOT ALLOWED</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <strong>"Triad of Death" - Watch For:</strong>
+                            <ul>
+                                <li>Hypothermia</li>
+                                <li>Coagulopathy</li>
+                                <li>Acidosis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burns -->
+                <div class="guideline-card" id="burns">
+                    <h3>Burn Injuries (F007)</h3>
+                    <div class="guideline-section">
+                        <h4>General Burn Care</h4>
+                        <ul>
+                            <li>Stop the burning process</li>
+                            <li>Remove constrictive clothing or jewelry</li>
+                            <li>Monitor airway closely for inhalation burns</li>
+                            <li>Cover with dry dressing</li>
+                            <li>Consider carbon monoxide/cyanide poisoning if in confined space</li>
+                            <li>Use tepid water to cool burns for 20-30min (avoid hypothermia)</li>
+                        </ul>
+
+                        <h4>Burn Percentage Requiring Fluid Therapy</h4>
+                        <ul>
+                            <li>Adult: 2nd degree burn >15% BSA</li>
+                            <li>Pediatric or Elderly: 2nd degree burn >10% BSA</li>
+                            <li>All Ages: 3rd degree burn >2%</li>
+                        </ul>
+
+                        <strong>Fluid Therapy Rates:</strong>
+                        <ul>
+                            <li>Age >14: 500 mL/hr NS or LR</li>
+                            <li>Age 5-13: 250 mL/hr NS or LR</li>
+                            <li>Age <5: 125 mL/hr NS or LR</li>
+                        </ul>
+
+                        <h4>Burn Types</h4>
+                        
+                        <strong>Thermal Burns:</strong>
+                        <ul>
+                            <li>Cool with tepid water</li>
+                            <li>Cover with dry dressing</li>
+                            <li>Fluid therapy as indicated</li>
+                        </ul>
+
+                        <strong>Chemical Burns:</strong>
+                        <ul>
+                            <li>Consult Emergency Response Guide FIRST</li>
+                            <li>Brush off any dry chemicals/powder</li>
+                            <li>Continuously flush with water if appropriate</li>
+                            <li>For eye involvement: Consider topical ophthalmic anesthetic</li>
+                            <li>Use appropriate PPE</li>
+                        </ul>
+
+                        <strong>Electrical Burns:</strong>
+                        <ul>
+                            <li>Suspect spinal injury (tetanic muscle contractions)</li>
+                            <li>Cardiac monitor and 12-lead EKG required</li>
+                            <li>Cover with dry dressing</li>
+                            <li>Fluid therapy as indicated</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <strong>BSA Assessment:</strong> Patient's palm = 1% of their BSA. Use "Rule of 9's" as reference.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extremity Injuries -->
+                <div class="guideline-card" id="extremity">
+                    <h3>Extremity and Amputation Injuries (F006)</h3>
+                    <div class="guideline-section">
+                        <h4>General Principles</h4>
+                        <ul>
+                            <li>DO NOT allow fractures to distract from life-threatening injuries</li>
+                            <li>Document peripheral neurovascular status before and after splinting</li>
+                            <li>Document approximate time of injury</li>
+                            <li>Consider pain management if stable</li>
+                        </ul>
+
+                        <h4>Fracture/Dislocation Management</h4>
+                        
+                        <strong>If neurovascular compromise present:</strong>
+                        <ul>
+                            <li>Blanching skin</li>
+                            <li>Absent pulses</li>
+                            <li>Mottled appearance</li>
+                            <li>Loss of sensation</li>
+                        </ul>
+                        <p><strong>Action:</strong> Attempt reduction to improve perfusion (2 attempts max), then splint</p>
+
+                        <strong>Approved dislocation reductions:</strong>
+                        <ul>
+                            <li>WITHOUT neurovascular compromise: Patella only</li>
+                            <li>WITH neurovascular compromise (blanching skin): Ankles</li>
+                            <li>Reduction of OPEN dislocations: NOT ALLOWED</li>
+                        </ul>
+
+                        <strong>Standard care:</strong>
+                        <ul>
+                            <li>Splint/apply traction as needed</li>
+                            <li>Immobilize joints above and below injury</li>
+                        </ul>
+
+                        <h4>Bleeding Control</h4>
+                        <ul>
+                            <li>Direct pressure</li>
+                            <li>Tourniquet</li>
+                            <li>Hemostatic agent</li>
+                            <li>Pressure point</li>
+                            <li>For junctional injuries: Consider wound packing</li>
+                        </ul>
+
+                        <h4>Amputation Care</h4>
+                        <ul>
+                            <li><strong>DO NOT delay transport</strong> for tissue retrieval</li>
+                            <li>Rinse amputated part with sterile saline/water if grossly contaminated</li>
+                            <li>Wrap part in saline-moistened gauze</li>
+                            <li>Place tissue in plastic bag or container</li>
+                            <li>Place bag/container on ice - AVOID freezing</li>
+                            <li>For partial amputation: Splint part in anatomical position</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medications Overview -->
+                <div class="guideline-card" id="medications">
+                    <h3>Medication Overview (H000)</h3>
+                    <div class="guideline-section">
+                        <h4>Principles of Administration</h4>
+                        <ul>
+                            <li>Closed loop communication</li>
+                            <li>Cross-check with another provider when possible</li>
+                            <li>Verify appropriateness including routes</li>
+                            <li>Use Pediatric Field Guide for pediatric dosing</li>
+                        </ul>
+
+                        <h4>Medication Errors</h4>
+                        <p>The system follows a "Just Culture" approach - self-reporting is encouraged and focuses on system improvements rather than punitive measures.</p>
+
+                        <div class="info-box">
+                            <strong>Dose Modification:</strong> Providers may lower recommended doses if justified and documented. Reasons include liver/kidney failure, age, weight, and potential drug interactions.
+                        </div>
+
+                        <h4>FDA Pregnancy Drug Classes</h4>
+                        <table class="medication-table">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Category A</strong></td>
+                                    <td>No demonstrated risk to fetus in first trimester</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Category B</strong></td>
+                                    <td>Animal studies show no risk; no adequate human studies</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Category C</strong></td>
+                                    <td>Animal studies show adverse effects; potential benefits may warrant use</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Category D</strong></td>
+                                    <td>Positive evidence of human fetal risk; potential benefits may warrant use</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Category X</strong></td>
+                                    <td>Fetal abnormalities demonstrated; risks clearly outweigh benefits</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Medication List -->
+                <div class="guideline-card" id="med-list">
+                    <h3>Approved Medications and Routes</h3>
+                    <div class="guideline-section">
+                        <h4>Medications by Provider Level</h4>
+                        <table class="medication-table">
+                            <thead>
+                                <tr>
+                                    <th>Medication</th>
+                                    <th>EMT</th>
+                                    <th>EMT-IV</th>
+                                    <th>Paramedic</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Acetaminophen (IV)</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Adenosine</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Albuterol</td>
+                                    <td>✓ SO</td>
+                                    <td>✓ SO</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Amiodarone</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Aspirin</td>
+                                    <td>✓ SO</td>
+                                    <td>✓ SO</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Atropine</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Calcium (Chloride/Gluconate)</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Dexamethasone (Decadron)</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Dextrose</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Diazepam (Valium)</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Diltiazem (Cardizem)</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓ SO</td>
+                                </tr>
+                                <tr>
+                                    <td>Diphenhydramine (Benadryl)</td>
+                                    <td>✗</td>
+                                    <td>✗</td>
+                                    <td>✓

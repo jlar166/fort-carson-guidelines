@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Trauma Care - Fort Carson EMS Guidelines</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚑 Fort Carson Fire and EMS</h1>
+            <div class="subtitle">Prehospital Practice Guidelines</div>
+            <div class="revision-date">Revised: 5/19/2022</div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Navigation</h2>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Menu</span>
+                </button>
+                
+                <div class="nav-content" id="navContent">
+                    <div class="nav-section">
+                    <h3>General</h3>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Introduction</a></li>
+                        <li><a href="patient-determination.html">Patient Determination</a></li>
+                        <li><a href="consent.html">Consent</a></li>
+                        <li><a href="supportive-care.html">General Supportive Care</a></li>
+                        <li><a href="pediatric.html">Pediatric Overview</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Procedures</h3>
+                    <ul class="nav-list">
+                        <li><a href="airway.html">Airway Management</a></li>
+                        <li><a href="pain.html">Pain Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medical Emergencies</h3>
+                    <ul class="nav-list">
+                        <li><a href="respiratory.html">Respiratory</a></li>
+                        <li><a href="cardiac.html">Cardiac</a></li>
+                        <li><a href="stroke.html">CVA/Stroke</a></li>
+                        <li><a href="seizure.html">Seizures</a></li>
+                        <li><a href="diabetes.html">Diabetic Emergency</a></li>
+                        <li><a href="allergic.html">Allergy/Anaphylaxis</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Trauma</h3>
+                    <ul class="nav-list">
+                        <li><a href="trauma-general.html" class="active">Standard Trauma Care</a></li>
+                        <li><a href="hemorrhagic.html">Hemorrhagic Shock</a></li>
+                        <li><a href="burns.html">Burn Injuries</a></li>
+                        <li><a href="extremity.html">Extremity Injuries</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Medications</h3>
+                    <ul class="nav-list">
+                        <li><a href="medications.html">Medication Overview</a></li>
+                        <li><a href="med-list.html">Medication List</a></li>
+                    </ul>
+                    </div>
+            </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="guideline-card">
+                    <h3>Standard Trauma Care (F001)</h3>
+                    <div class="guideline-section">
+                        <h4>General Principles</h4>
+                        <ul>
+                            <li>Scene times should be 10 minutes or less if possible</li>
+                            <li>Invasive treatments should be performed en route</li>
+                            <li>Early notification to receiving facility</li>
+                            <li>EtCO2 SHOULD be utilized in any major trauma</li>
+                            <li>Avoid hypothermia - maintain patient warmth</li>
+                        </ul>
+
+                        <h4>Initial Assessment</h4>
+                        <ul>
+                            <li>Consider C-spine precautions (see Spinal Motion Restriction)</li>
+                            <li>Maintain patent airway and OXYGENATION</li>
+                            <li>Monitor EtCO2 and obtain VS</li>
+                            <li>Complete neurologic exam</li>
+                            <li>Control bleeding:
+                                <ul>
+                                    <li>Direct pressure and/or</li>
+                                    <li>Tourniquet and/or</li>
+                                    <li>Hemostatic agent and/or</li>
+                                    <li>Pressure point and/or</li>
+                                    <li>Pelvic binder and/or</li>
+                                    <li>Wound packing (junctional injuries ONLY)</li>
+                                </ul>
+                            </li>
+                            <li>Establish vascular access if clinically indicated</li>
+                            <li>Treat for shock if clinically indicated</li>
+                        </ul>
+
+                        <div class="danger-box">
+                            <strong>Pregnant Trauma Patients:</strong>
+                            <ul>
+                                <li>Avoid supine position - left lateral recumbent >30°</li>
+                                <li>VS may be altered (increased HR, decreased BP, increased blood volume)</li>
+                                <li>Traumatic arrest with gestation >23 weeks = rapid transport for perimortem c-section
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const navContent = document.getElementById('navContent');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navContent.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
